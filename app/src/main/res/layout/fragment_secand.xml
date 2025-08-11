@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TabScreen.MiniHeel.SIMPProcessFragment">
+
+    <!-- Column 1 - SIMP Weight Control -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSimpWeightControl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cardSimpComposition"
+        android:layout_marginEnd="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FROM MBF"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:drawablePadding="8dp"
+                android:textColor="@color/info_dark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF">
+
+                <!-- SIMP Weight Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFDE7"
+                android:padding="16dp"
+                android:elevation="4dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SIMP Weight: 51 kg"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Retrieved via MQTT"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginTop="4dp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Accept"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#E0B54E"
+                    android:drawableLeft="@drawable/time1"
+                    android:drawableTint="@color/white"
+                    android:layout_marginTop="16dp"
+                    android:textStyle="bold"
+                    android:drawablePadding="58dp"/>
+            </LinearLayout>
+
+            <!-- Accepted Message -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SIMP Weight accepted at 12:07:54 PM"
+                android:background="#E8F5E9"
+            android:textColor="#2E7D32"
+            android:textSize="14sp"
+            android:padding="10dp" />
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Metal MBF to SIMP:"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Input Fields -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text=""
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_card"
+                android:padding="8dp" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Column 2 - SIMP Composition -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSimpComposition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toEndOf="@id/cardSimpWeightControl"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cardSimpLadleConfig"
+        android:layout_marginEnd="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FROM SIMP to MHF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#1E88E5"
+                android:layout_marginBottom="16dp" />
+
+            <!-- In Time -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In Time"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#F2F2F2"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="11-08-2025 14:45"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_calendar" />
+            </LinearLayout>
+
+            <!-- SIMP Composition -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIMP Composition:"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#1E88E5"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Composition Grid -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="4"
+                android:alignmentMode="alignMargins"
+                android:useDefaultMargins="true">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="C%                                   0.95"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="Si%                                 0.95"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="Mn%                               0.95"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="S%                                  0.95"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="P%                                   0.95"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="Cr%                                 0.95"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="Ni%                                 0.95"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="Cu%                                0.95"
+                    android:textStyle="bold" />
+
+                <!-- Repeat similar for Mn%, Si%, etc. -->
+
+            </GridLayout>
+
+            <!-- Temperature -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperature"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F2F2F2"
+                android:padding="12dp"
+                android:enabled="false"
+                android:text="1400"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Furnace Number -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIMP Furnace Number"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F2F2F2"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Metal Received -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIMP Metal Received"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F2F2F2"
+                android:padding="12dp"
+                android:hint="Enter metal received amount" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Column 3 - SIMP Ladle Configuration -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSimpLadleConfig"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toEndOf="@id/cardSimpComposition"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="From MHF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#1E88E5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MHF metal to SIMP"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F2F2F2"
+                android:padding="12dp"
+                android:hint="Enter MHF metal value" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

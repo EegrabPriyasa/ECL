@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/green_border_box.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Background color inside the box -->
+    <solid android:color="@android:color/white" />
+
+    <!-- Green border -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/info_dark" /> <!-- Material green shade -->
+
+    <!-- Rounded corners -->
+    <corners android:radius="8dp" />
+
+    <!-- Optional padding (space inside the border) -->
+    <padding
+        android:left="8dp"
+        android:top="8dp"
+        android:right="8dp"
+        android:bottom="8dp" />
+
+</shape>

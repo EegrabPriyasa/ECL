@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- LEFT PANEL -->
+        <LinearLayout
+            android:id="@+id/leftPanel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="12dp"
+            android:elevation="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/rightPanel"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="8dp">
+
+            <!-- Title Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/temparature"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Live Temperature Readings"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+            <!-- Selected Temperature -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Temperature :1200°C "
+                android:background="@drawable/edit_field_design"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:textColor="#565252"
+                android:layout_marginTop="8dp" />
+
+            <!-- Spinner: MHF Number -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MHF Number"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edit_field_design"
+                android:spinnerMode="dropdown"/>
+
+            <!-- Temperature Reading Card -->
+
+            <!-- Temperature Type -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperature Type"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Initial" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Final"
+                    android:layout_marginStart="16dp" />
+            </RadioGroup>
+
+            <!-- Submit Button -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Temperature Data"
+                android:backgroundTint="#666666"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="12dp" />
+
+        </LinearLayout>
+
+
+
+
+        <!-- RIGHT PANEL -->
+        <LinearLayout
+            android:id="@+id/rightPanel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="12dp"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/leftPanel"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="8dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Furnace Energy Meter Reading"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/gauge"
+                android:drawablePadding="8dp"
+                android:textSize="16sp"
+                android:textColor="@color/line"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Alert -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EAF3FF"
+                android:padding="8dp"
+                android:text="Daily Alert\nReminder: Submit meter reading before 6:00 AM daily"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp" />
+
+            <!-- MHF Number -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MHF Number"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edit_field_design" />
+
+            <!-- MHF Meter Reading -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MHF Meter Reading"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:hint="Enter meter reading"
+                android:background="@drawable/edit_field_design"
+                />
+
+            <!-- Current Time & Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Current Time: 5:56:48 PM"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:gravity="center"
+                    android:layout_height="30dp"
+                    android:text="Capture Time"
+                    android:drawableStart="@drawable/watch"
+                    android:paddingStart="5dp"
+                    android:background="@drawable/bg_card"
+
+                    />
+            </LinearLayout>
+
+            <!-- Submit Button -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Meter Reading"
+                android:backgroundTint="#666666"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="12dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

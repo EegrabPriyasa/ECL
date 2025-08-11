@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TabScreen.MiniHeel.MBFProcessFragment">
+
+    <!-- Left Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/leftCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_margin="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rightCard">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MBF Tap Time/Metal from MBF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/info_dark"
+                android:drawablePadding="8dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Ladle Sequence -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ladle Sequence No:"
+                android:textColor="@color/info_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edit_field_design"
+                android:spinnerMode="dropdown"/>
+
+            <!-- Tap Time -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap Time:"
+                android:textSize="14sp"
+                android:textColor="@color/info_dark"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_field_design"
+                android:padding="8dp"
+                android:text="13:08"
+                android:focusable="false"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Temp -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temp:"
+                android:textColor="@color/info_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_field_design"
+                android:text=""
+                android:padding="8dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Weight -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weight:"
+                android:textColor="@color/info_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card"
+                    android:padding="8dp"
+                    android:text="22T" />
+
+            </LinearLayout>
+
+            <!-- Accepted Button -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Accepted"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#81C784"
+                android:textColor="@android:color/white" />
+
+            <!-- Success Note -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E8F5E9"
+                android:text="MBF Tap accepted at 12:07:11 PM"
+                android:textColor="#388E3C"
+                android:padding="8dp"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Right Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rightCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_margin="4dp"
+        app:layout_constraintStart_toEndOf="@id/leftCard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MBF Composition"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:drawablePadding="8dp"
+                android:textColor="@color/info_dark"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Grid of Compositions -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="4"
+                android:alignmentMode="alignMargins"
+                android:useDefaultMargins="true">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="C%                                                               0.95"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="Si%                                                               0.95"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="Mn%                                                            0.95"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="S%                                                               0.95"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="P%                                                               0.95"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="Ti%                                                              0.95"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="#E3F2FD"
+                    android:padding="8dp"
+                    android:text="Cr%                                                              0.95"
+                    android:textStyle="bold" />
+
+                <!-- Repeat similar for Mn%, Si%, etc. -->
+
+            </GridLayout>
+
+            <!-- Note -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E3F2FD"
+                android:padding="8dp"
+                android:text="Note: Composition values are auto-retrieved from the database"
+                android:textColor="#1565C0"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- under right Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/BelowRightCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_margin="4dp"
+        app:layout_constraintStart_toEndOf="@id/leftCard"
+        app:layout_constraintTop_toBottomOf="@id/rightCard"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#FFFFFF">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MHF Furnace Pouring"
+                android:textColor="#1E88E5"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Start Pouring Button -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Pouring"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#11A63A"
+                android:drawableLeft="@drawable/start"
+                android:drawablePadding="8dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                />
+
+            <!-- Stop Pouring Button -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stop Pouring"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#F28B82"
+                android:drawableLeft="@drawable/ic_stop"
+                android:drawablePadding="8dp"
+                android:layout_marginBottom="12dp"
+                android:padding="12dp" />
+
+            <!-- Status Message -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MHF Furnace Pouring Stopped"
+                android:drawableLeft="@drawable/danger"
+                android:drawablePadding="8dp"
+                android:background="#F5F5F5"
+                android:textColor="#424242"
+                android:padding="12dp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
