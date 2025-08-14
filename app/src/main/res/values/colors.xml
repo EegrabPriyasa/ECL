@@ -21,6 +21,7 @@
     <color name="gray">#CFDAE3</color>
     <color name="boxColor">#CFDAE3</color>
     <color name="logInBlue">#1a4fda</color>
+    <color name="compositionBg">#E3F2FD</color>
     <!--  Primary Colors  -->
     <color name="primary_blue">#2563eb</color>
     <color name="primary_blue_light">#3b82f6</color>

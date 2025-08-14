@@ -2,7 +2,7 @@ package com.example.ecl_project_file.TabScreen.MiniHeel
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ecl_project_file.AdapterClass.MiniHeelPageAdapter
+import com.example.ecl_project_file.Adapters.MiniHeelPageAdapter
 import com.example.ecl_project_file.databinding.ActivityMiniHeelPageBinding
 import com.google.android.material.tabs.TabLayoutMediator
 

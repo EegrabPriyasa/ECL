@@ -6,513 +6,284 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TabScreen.MiniHeel.MHFProcessFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_card"
-        android:padding="16dp"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Icon -->
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/scale"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Title -->
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="MS Scrap"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/icon"
-            app:layout_constraintStart_toEndOf="@id/icon"
-            app:layout_constraintTop_toTopOf="@id/icon" />
-
-        <!-- Recommended label -->
-        <TextView
-            android:id="@+id/recommended_label"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Recommended (kg)"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@id/actual_label"
-            app:layout_constraintHorizontalWeight="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/icon" />
-
-        <!-- Actual label -->
-        <TextView
-            android:id="@+id/actual_label"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Actual (kg)"
-            android:textStyle="bold"
-            android:layout_marginStart="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/recommended_label"
-            app:layout_constraintTop_toBottomOf="@id/icon" />
-
-        <!-- Recommended value -->
-        <TextView
-            android:id="@+id/recommended_value"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:background="@drawable/button_bg"
-            android:gravity="center_vertical"
-            android:paddingStart="18dp"
-            android:layout_marginTop="5dp"
-            android:text="25"
-            app:layout_constraintEnd_toStartOf="@id/actual_value"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recommended_label" />
-
-        <!-- Actual value -->
-        <TextView
-            android:id="@+id/actual_value"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:background="@drawable/button_bg"
-            android:gravity="center_vertical"
-            android:paddingStart="18dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="5dp"
-            android:text="24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/recommended_value"
-            app:layout_constraintTop_toBottomOf="@id/actual_label" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-       android:id="@+id/layout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_card"
-        android:padding="16dp"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout1">
-
-        <!-- Icon -->
-        <ImageView
-            android:id="@+id/icon1"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/scale"
-            android:tint="@color/warning_dark"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!-- Title -->
-        <TextView
-            android:id="@+id/title1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="Fe-Si"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/icon1"
-            app:layout_constraintStart_toEndOf="@id/icon1"
-            app:layout_constraintTop_toTopOf="@id/icon1" />
-
-        <!-- Recommended label -->
-        <TextView
-            android:id="@+id/recommended_label1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Recommended (kg)"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@id/actual_label1"
-            app:layout_constraintHorizontalWeight="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/icon1" />
-
-        <!-- Actual label -->
-        <TextView
-            android:id="@+id/actual_label1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Actual (kg)"
-            android:textStyle="bold"
-            android:layout_marginStart="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/recommended_label1"
-            app:layout_constraintTop_toBottomOf="@id/icon1" />
-
-        <!-- Recommended value -->
-        <TextView
-            android:id="@+id/recommended_value1"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:background="@drawable/button_bg"
-            android:gravity="center_vertical"
-            android:paddingStart="18dp"
-            android:layout_marginTop="5dp"
-            android:text="25"
-            app:layout_constraintEnd_toStartOf="@id/actual_value2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recommended_label1" />
-
-        <!-- Actual value -->
-        <TextView
-            android:id="@+id/actual_value2"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:background="@drawable/button_bg"
-            android:gravity="center_vertical"
-            android:paddingStart="18dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="5dp"
-            android:text="24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/recommended_value1"
-            app:layout_constraintTop_toBottomOf="@id/actual_label1" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+      <include layout="@layout/third_fragment_upper_part"
+          android:id="@+id/thirdFragmentUpperPart"/>
     <androidx.cardview.widget.CardView
-        android:id="@+id/main_content_card2"
+        android:id="@+id/lowerPart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp"
-        app:layout_constraintTop_toBottomOf="@id/layout2"
-        app:cardBackgroundColor="@android:color/white">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="320dp">
-
-            <!-- Header -->
-            <LinearLayout
-                android:id="@+id/header_layout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gradient_header"
-                android:padding="16dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <TextView
-                    android:id="@+id/step_title1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="MHF Composition"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white" />
-            </LinearLayout>
-
-            <!-- Selection Tabs -->
-            <LinearLayout
-                android:id="@+id/tab_layout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/header_layout"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <TextView
-                    android:id="@+id/tab_initial"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:layout_marginStart="5dp"
-                    android:text="Initial Composition"
-                    android:textSize="16sp"
-                    android:elevation="11dp"
-                    android:textColor="@color/success_dark"
-                    android:background="@drawable/green_border" />
-
-                <TextView
-                    android:id="@+id/tab_final"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:text="Final Composition"
-                    android:textSize="16sp"
-                    android:elevation="11dp"
-                    android:textColor="@color/info_color"
-                    android:background="@drawable/blue_border" />
-            </LinearLayout>
-
-            <!-- Initial Composition Box -->
-            <LinearLayout
-                android:id="@+id/initial_box"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="@drawable/bg_card"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="5dp"
-                app:layout_constraintTop_toBottomOf="@id/tab_layout"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/final_box"
-                app:layout_constraintHorizontalWeight="1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Initial Composition"
-                    android:textColor="@color/success_dark"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <!-- Row of values -->
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:columnCount="3"
-                    android:rowCount="2"
-                    android:alignmentMode="alignMargins"
-                    android:useDefaultMargins="true"
-                    android:layout_marginTop="8dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:background="#E3F2FD"
-                        android:padding="8dp"
-                        android:text="C%                                   0.95"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:background="#E3F2FD"
-                        android:padding="8dp"
-                        android:text="Si%                                 0.95"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:background="#E3F2FD"
-                        android:padding="8dp"
-                        android:text="Mn%                               0.95"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:background="#E3F2FD"
-                        android:padding="8dp"
-                        android:text="S%                                  0.95"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:background="#E3F2FD"
-                        android:padding="8dp"
-                        android:text="P%                                   0.95"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:background="#E3F2FD"
-                        android:padding="8dp"
-                        android:text="Cr%                                 0.95"
-                        android:textStyle="bold" />
-                </GridLayout>
-            </LinearLayout>
-
-            <!-- Final Composition Box -->
-            <LinearLayout
-                android:id="@+id/final_box"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="@drawable/bg_card"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="8dp"
-                app:layout_constraintTop_toBottomOf="@id/tab_layout"
-                app:layout_constraintStart_toEndOf="@id/initial_box"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontalWeight="1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Final Composition"
-                    android:textColor="@color/info_color"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <!-- Row of values -->
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:columnCount="3"
-                    android:rowCount="2"
-                    android:alignmentMode="alignMargins"
-                    android:useDefaultMargins="true"
-                    android:layout_marginTop="8dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:background="#E3F2FD"
-                        android:padding="8dp"
-                        android:text="C%                                   0.95"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:background="#E3F2FD"
-                        android:padding="8dp"
-                        android:text="Si%                                 0.95"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:background="#E3F2FD"
-                        android:padding="8dp"
-                        android:text="Mn%                               0.95"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:background="#E3F2FD"
-                        android:padding="8dp"
-                        android:text="S%                                  0.95"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:background="#E3F2FD"
-                        android:padding="8dp"
-                        android:text="P%                                   0.95"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:background="#E3F2FD"
-                        android:padding="8dp"
-                        android:text="Cr%                                 0.95"
-                        android:textStyle="bold" />
-
-                </GridLayout>
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Select Initial or Final composition to proceed"
-                android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginTop="260dp"
-                />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/department_selection_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="600dp"
         android:layout_margin="8dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="6dp"
         app:cardBackgroundColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/main_content_card2"
+        app:layout_constraintTop_toBottomOf="@+id/thirdFragmentUpperPart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/thirdFragmentUpperPart">
 
-            <!-- Icon and Title -->
-            <ImageView
-                android:id="@+id/icon_department"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/office"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <!-- 50% vertical guideline -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineHalf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
 
+            <!-- Section Title -->
             <TextView
-                android:id="@+id/title_department"
+                android:id="@+id/title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Department Selection"
-                android:textSize="16sp"
+                android:text="MHF Pouring Control"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/icon_department"
-                app:layout_constraintTop_toTopOf="@id/icon_department"
-                app:layout_constraintBottom_toBottomOf="@id/icon_department" />
-
-            <!-- Label -->
-            <TextView
-                android:id="@+id/label_select_department"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Select Department"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@id/icon_department"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- Dropdown -->
-            <Spinner
+            <!-- Input Controls Label -->
+            <TextView
+                android:id="@+id/inputControls"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Input Controls"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineHalf" />
+
+            <!-- Output Controls Label -->
+            <TextView
+                android:id="@+id/outputControls"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Output Controls"
+                android:textColor="@android:color/holo_green_dark"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintStart_toEndOf="@id/guidelineHalf"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Divider line -->
+            <View
+                android:id="@+id/view"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/button_bg"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- Input Section Example -->
+            <TextView
+                android:id="@+id/mhfPouring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mhf_return_pouring"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/etReturnPouring"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter return pouring amount"
+                android:background="#F2F2F2"
+                android:layout_marginTop="5dp"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@id/mhfPouring"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineHalf" />
+
+            <TextView
+                android:id="@+id/mhfRecall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mhf_recall"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/etReturnPouring"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btnRecall"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/success_dark"
+                android:text="MHF Recall"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mhfRecall" />
+            <TextView
+                android:id="@+id/mhfReturnLadle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mhf_return_ladle_sequence"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/btnRecall"
+                app:layout_constraintStart_toStartOf="parent" />
+            <Spinner
+                android:id="@+id/spReturnLadleSequence"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:background="#F2F2F2"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/mhfReturnLadle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineHalf" />
+            <TextView
+                android:id="@+id/mhfLadleWeightIN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mhf_ladle_weight_in"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/spReturnLadleSequence"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/edtMhfLadleWeightIN"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="450"
+                android:background="#F2F2F2"
+                android:layout_marginTop="5dp"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@id/mhfLadleWeightIN"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineHalf" />
+
+            <TextView
+                android:id="@+id/mhfLadleOutSeq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mhf_return_ladle_sequence"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toBottomOf="@id/outputControls"
+                app:layout_constraintStart_toEndOf="@id/guidelineHalf"
+
+                />
+
+            <Spinner
+                android:id="@+id/spMhfLadleOutSeq"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/label_select_department"/>
+                android:background="#F2F2F2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guidelineHalf"
+                app:layout_constraintTop_toBottomOf="@id/mhfLadleOutSeq" />
+            <Button
+                android:id="@+id/btnStartPouring"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Start Pouring"
+                android:backgroundTint="@color/success_dark"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/spMhfLadleOutSeq"
+                app:layout_constraintStart_toEndOf="@id/guidelineHalf" />
+
+            <Button
+                android:id="@+id/btnStopPouring"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Stop Pouring"
+                android:backgroundTint="@color/warning_dark"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/spMhfLadleOutSeq"
+                app:layout_constraintStart_toEndOf="@id/btnStartPouring"
+                 />
+
+            <TextView
+                android:id="@+id/mhfLadleWeightOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mhf_ladle_weight_in"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/guidelineHalf"
+                app:layout_constraintTop_toBottomOf="@+id/btnStartPouring" />
+
+            <TextView
+                android:id="@+id/edtMhfLadleWeightOut"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#F2F2F2"
+                android:hint="450"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guidelineHalf"
+                app:layout_constraintTop_toBottomOf="@+id/mhfLadleWeightOut" />
+            <TextView
+                android:id="@+id/maxWtGiven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/max_kw_given"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/guidelineHalf"
+                app:layout_constraintTop_toBottomOf="@+id/edtMhfLadleWeightOut" />
+
+            <EditText
+                android:id="@+id/edtMaxWtGiven"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#F2F2F2"
+                android:hint="Enter KW Value"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guidelineHalf"
+                app:layout_constraintTop_toBottomOf="@+id/maxWtGiven" />
+
+            <Button
+                android:id="@+id/btnMHFLadleOut"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="MHF Ladle Out"
+                android:backgroundTint="@color/status_maintenance"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/edtMaxWtGiven"
+                app:layout_constraintStart_toEndOf="@id/btnStartPouring"
+                />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
 
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

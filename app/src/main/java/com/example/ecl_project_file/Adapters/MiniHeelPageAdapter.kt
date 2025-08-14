@@ -1,4 +1,4 @@
-package com.example.ecl_project_file.AdapterClass
+package com.example.ecl_project_file.Adapters
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

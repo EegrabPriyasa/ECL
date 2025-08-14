@@ -2,4 +2,13 @@
     <string name="app_name">ECL_project_file</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mhf_return_pouring">MHF Return Pouring</string>
+    <string name="mhf_recall">MHF Recall</string>
+    <string name="mhf_return_ladle_sequence">MHF Return Ladle Sequence</string>
+    <string name="mhf_ladle_weight_in">MHF Ladle Weight In</string>
+    <string name="max_kw_given">Max KW Given</string>
+    <string name="stop_pouring">Stop Pouring</string>
+    <string name="start_pouring">Start Pouring</string>
+    <string name="mhf_furnace_pouring">MHF Furnace Pouring</string>
+    <string name="mhf_furnace_pouring_stopped">MHF Furnace Pouring Stopped</string>
 </resources>
