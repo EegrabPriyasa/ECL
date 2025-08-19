@@ -6,5 +6,678 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TabScreen.Converter.SDPConverterActivity">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTreatmentInfo"
+        android:layout_width="900dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/finalComposition"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeSystemSetup"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#4285F4"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/settings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Treatment Information"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvDept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dept:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:id="@+id/tvDeptValue"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg_converter"
+                    android:backgroundTint="@color/blue"
+                    android:padding="8dp"
+                    android:text="MP"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvDept"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <TextView
+                    android:id="@+id/tvTrtNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trt No:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toEndOf="@id/tvDept"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:id="@+id/tvTrtNoValue"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg_converter"
+                    android:backgroundTint="@color/blue"
+                    android:padding="8dp"
+                    android:text="1"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvTrtNo"
+                    app:layout_constraintStart_toEndOf="@id/tvDeptValue"/>
+                <TextView
+                    android:id="@+id/tvMetalForm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Metal Form:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toEndOf="@id/tvTrtNo"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:id="@+id/tvMetalFormValue"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg_converter"
+                    android:backgroundTint="@color/blue"
+                    android:padding="8dp"
+                    android:text="MHF"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvMetalForm"
+                    app:layout_constraintStart_toEndOf="@id/tvTrtNoValue"/>
+                <TextView
+                    android:id="@+id/tvMetalTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Metal Temp:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="85dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toEndOf="@id/tvMetalForm"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:id="@+id/tvMetalTempValue"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg_converter"
+                    android:backgroundTint="@color/lightBlue"
+                    android:padding="8dp"
+                    android:text="1450"
+                    android:gravity="center"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvMetalTemp"
+                    app:layout_constraintStart_toEndOf="@id/tvMetalFormValue"/>
+
+                <!-- Metal Qty -->
+                <TextView
+                    android:id="@+id/tvMetalQty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Metal Qty:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDeptValue" />
+
+                <EditText
+                    android:id="@+id/etMetalQtyValue"
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/button_bg_converter"
+                    android:backgroundTint="@color/lightBlue"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:text="4T"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvMetalQty" />
+
+                <!-- Ladle No -->
+                <TextView
+                    android:id="@+id/tvLadleNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Ladle No:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@id/etMetalQtyValue"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTrtNoValue" />
+
+                <TextView
+                    android:id="@+id/tvLadleNoValue"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg_converter"
+                    android:backgroundTint="@color/blue"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="5"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintStart_toEndOf="@id/etMetalQtyValue"
+                    app:layout_constraintTop_toBottomOf="@id/tvLadleNo" />
+
+                <!-- Shift -->
+                <TextView
+                    android:id="@+id/tvShift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Shift:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginStart="110dp"
+
+
+                    app:layout_constraintStart_toEndOf="@+id/tvLadleNo"
+                    app:layout_constraintTop_toBottomOf="@id/tvMetalFormValue" />
+
+                <TextView
+                    android:id="@+id/tvShiftValue"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg_converter"
+                    android:backgroundTint="@color/blue"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="A"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintStart_toEndOf="@id/tvLadleNoValue"
+                    app:layout_constraintTop_toBottomOf="@id/tvShift" />
+
+                <!-- Divider -->
+                <!--                        <View-->
+                <!--                            android:id="@+id/viewDivider1"-->
+                <!--                            android:layout_width="0dp"-->
+                <!--                            android:layout_height="1dp"-->
+                <!--                            android:background="#DDDDDD"-->
+                <!--                            android:layout_marginTop="20dp"-->
+                <!--                            app:layout_constraintTop_toBottomOf="@id/tvShiftValue"-->
+                <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                <!--                            app:layout_constraintEnd_toEndOf="parent" />-->
+
+                <!--                        &lt;!&ndash; Sequence of Timestamps Header &ndash;&gt;-->
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/tvSequenceTitle"-->
+                <!--                            android:layout_width="wrap_content"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:text="Sequence of 3 Timestamps"-->
+                <!--                            android:textSize="18sp"-->
+                <!--                            android:textColor="@color/black"-->
+                <!--                            android:layout_marginStart="20dp"-->
+                <!--                            android:layout_marginTop="20dp"-->
+                <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                <!--                            app:layout_constraintTop_toBottomOf="@id/viewDivider1" />-->
+
+                <!--                        &lt;!&ndash; Time Sequence Row &ndash;&gt;-->
+                <!--                        &lt;!&ndash; 1: Metal IN &ndash;&gt;-->
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/tvMetalInLabel"-->
+                <!--                            android:layout_width="wrap_content"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:text="Metal IN"-->
+                <!--                            android:textSize="14sp"-->
+                <!--                            android:textColor="@color/black"-->
+                <!--                            android:layout_marginTop="10dp"-->
+                <!--                            app:layout_constraintTop_toBottomOf="@id/tvSequenceTitle"-->
+                <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                <!--                            android:layout_marginStart="40dp" />-->
+
+                <!--                        <Button-->
+                <!--                            android:id="@+id/btnMetalInTime"-->
+                <!--                            android:layout_width="100dp"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:text="Time"-->
+                <!--                            android:backgroundTint="@color/blue"-->
+                <!--                            android:textColor="@android:color/white"-->
+                <!--                            android:layout_marginTop="5dp"-->
+                <!--                            app:layout_constraintTop_toBottomOf="@id/tvMetalInLabel"-->
+                <!--                            app:layout_constraintStart_toStartOf="@id/tvMetalInLabel" />-->
+
+                <!--                        &lt;!&ndash; 2: Treatment End &ndash;&gt;-->
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/tvTreatmentEndLabel"-->
+                <!--                            android:layout_width="wrap_content"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:text="Treatment End"-->
+                <!--                            android:textSize="14sp"-->
+                <!--                            android:textColor="@color/black"-->
+                <!--                            android:layout_marginStart="60dp"-->
+                <!--                            android:layout_marginTop="10dp"-->
+                <!--                            app:layout_constraintStart_toEndOf="@id/btnMetalInTime"-->
+                <!--                            app:layout_constraintTop_toBottomOf="@id/tvSequenceTitle" />-->
+
+                <!--                        <Button-->
+                <!--                            android:id="@+id/btnTreatmentEndTime"-->
+                <!--                            android:layout_width="100dp"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:text="Time"-->
+                <!--                            android:backgroundTint="@color/blue"-->
+                <!--                            android:textColor="@android:color/white"-->
+                <!--                            android:layout_marginTop="5dp"-->
+                <!--                            app:layout_constraintTop_toBottomOf="@id/tvTreatmentEndLabel"-->
+                <!--                            app:layout_constraintStart_toStartOf="@id/tvTreatmentEndLabel" />-->
+
+                <!--                        &lt;!&ndash; 3: Metal Out &ndash;&gt;-->
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/tvMetalOutLabel"-->
+                <!--                            android:layout_width="wrap_content"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:text="Metal Out"-->
+                <!--                            android:textSize="14sp"-->
+                <!--                            android:textColor="@color/black"-->
+                <!--                            android:layout_marginStart="60dp"-->
+                <!--                            android:layout_marginTop="10dp"-->
+                <!--                            app:layout_constraintStart_toEndOf="@id/btnTreatmentEndTime"-->
+                <!--                            app:layout_constraintTop_toBottomOf="@id/tvSequenceTitle" />-->
+
+                <!--                        <Button-->
+                <!--                            android:id="@+id/btnMetalOutTime"-->
+                <!--                            android:layout_width="100dp"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:text="Time"-->
+                <!--                            android:backgroundTint="@color/blue"-->
+                <!--                            android:textColor="@android:color/white"-->
+                <!--                            android:layout_marginTop="5dp"-->
+                <!--                            app:layout_constraintTop_toBottomOf="@id/tvMetalOutLabel"-->
+                <!--                            app:layout_constraintStart_toStartOf="@id/tvMetalOutLabel" />-->
+
+                <!--                        &lt;!&ndash; Divider &ndash;&gt;-->
+                <!--                        <View-->
+                <!--                            android:id="@+id/viewDivider2"-->
+                <!--                            android:layout_width="0dp"-->
+                <!--                            android:layout_height="1dp"-->
+                <!--                            android:background="#DDDDDD"-->
+                <!--                            android:layout_marginTop="20dp"-->
+                <!--                            app:layout_constraintTop_toBottomOf="@id/btnMetalOutTime"-->
+                <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                <!--                            app:layout_constraintEnd_toEndOf="parent" />-->
+
+                <!--                        &lt;!&ndash; Return Metal Time &ndash;&gt;-->
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/tvReturnMetalLabel"-->
+                <!--                            android:layout_width="wrap_content"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:text="Return Metal - Time:"-->
+                <!--                            android:textSize="16sp"-->
+                <!--                            android:textColor="@color/black"-->
+                <!--                            android:layout_marginStart="30dp"-->
+                <!--                            android:layout_marginTop="20dp"-->
+                <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                <!--                            app:layout_constraintTop_toBottomOf="@id/viewDivider2" />-->
+
+                <!--                        <Button-->
+                <!--                            android:id="@+id/btnReturn"-->
+                <!--                            android:layout_width="80dp"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:text="Return"-->
+                <!--                            android:backgroundTint="@color/orange"-->
+                <!--                            android:textColor="@android:color/white"-->
+                <!--                            android:layout_marginStart="10dp"-->
+                <!--                            app:layout_constraintStart_toEndOf="@id/tvReturnMetalLabel"-->
+                <!--                            app:layout_constraintTop_toTopOf="@id/tvReturnMetalLabel" />-->
+
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/tvReturnTimeValue"-->
+                <!--                            android:layout_width="wrap_content"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:text="16:00:13"-->
+                <!--                            android:textColor="@color/orange"-->
+                <!--                            android:layout_marginStart="10dp"-->
+                <!--                            android:textSize="16sp"-->
+                <!--                            android:textStyle="bold"-->
+                <!--                            app:layout_constraintStart_toEndOf="@id/btnReturn"-->
+                <!--                            app:layout_constraintTop_toTopOf="@id/tvReturnMetalLabel" />-->
+
+                <!--                        &lt;!&ndash; Divider &ndash;&gt;-->
+                <!--                        <View-->
+                <!--                            android:id="@+id/viewDivider3"-->
+                <!--                            android:layout_width="0dp"-->
+                <!--                            android:layout_height="1dp"-->
+                <!--                            android:background="#DDDDDD"-->
+                <!--                            android:layout_marginTop="20dp"-->
+                <!--                            app:layout_constraintTop_toBottomOf="@id/tvReturnMetalLabel"-->
+                <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                <!--                            app:layout_constraintEnd_toEndOf="parent" />-->
+
+                <!--                        &lt;!&ndash; Ladle In / Out &ndash;&gt;-->
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/tvLadleInLabel"-->
+                <!--                            android:layout_width="wrap_content"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:text="Ladle In No:"-->
+                <!--                            android:textSize="16sp"-->
+                <!--                            android:textColor="@color/black"-->
+                <!--                            android:layout_marginStart="30dp"-->
+                <!--                            android:layout_marginTop="20dp"-->
+                <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                <!--                            app:layout_constraintTop_toBottomOf="@id/viewDivider3" />-->
+
+                <!--                        <EditText-->
+                <!--                            android:id="@+id/etLadleInValue"-->
+                <!--                            android:layout_width="140dp"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:background="@drawable/edit_bg"-->
+                <!--                            android:gravity="center"-->
+                <!--                            android:layout_marginStart="10dp"-->
+                <!--                            app:layout_constraintStart_toEndOf="@id/tvLadleInLabel"-->
+                <!--                            app:layout_constraintTop_toTopOf="@id/tvLadleInLabel" />-->
+
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/tvLadleOutLabel"-->
+                <!--                            android:layout_width="wrap_content"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:text="Ladle Out No:"-->
+                <!--                            android:textSize="16sp"-->
+                <!--                            android:textColor="@color/black"-->
+                <!--                            android:layout_marginStart="50dp"-->
+                <!--                            app:layout_constraintStart_toEndOf="@id/etLadleInValue"-->
+                <!--                            app:layout_constraintTop_toTopOf="@id/tvLadleInLabel" />-->
+
+                <!--                        <EditText-->
+                <!--                            android:id="@+id/etLadleOutValue"-->
+                <!--                            android:layout_width="140dp"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:background="@drawable/edit_bg"-->
+                <!--                            android:gravity="center"-->
+                <!--                            android:layout_marginStart="10dp"-->
+                <!--                            app:layout_constraintStart_toEndOf="@id/tvLadleOutLabel"-->
+                <!--                            app:layout_constraintTop_toTopOf="@id/tvLadleInLabel" />-->
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--                    &lt;!&ndash; Info Fields &ndash;&gt;-->
+            <!--                    <GridLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:padding="12dp"-->
+            <!--                        android:rowCount="2">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:text="Dept:"-->
+            <!--                            android:textSize="14sp"-->
+            <!--                            android:textColor="@color/black" />-->
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:background="#4285F4"-->
+            <!--                            android:padding="8dp"-->
+            <!--                            android:text="MP"-->
+            <!--                            android:textColor="@android:color/white"-->
+            <!--                            android:textStyle="bold" />-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:text="Trt No:"-->
+            <!--                            android:textSize="14sp"-->
+            <!--                            android:textColor="@color/black" />-->
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:background="#4285F4"-->
+            <!--                            android:padding="8dp"-->
+            <!--                            android:text="1"-->
+            <!--                            android:textColor="@android:color/white"-->
+            <!--                            android:textStyle="bold" />-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:text="Metal Form:"-->
+            <!--                            android:textSize="14sp"-->
+            <!--                            android:textColor="@color/black" />-->
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:background="#4285F4"-->
+            <!--                            android:padding="8dp"-->
+            <!--                            android:text="MHF"-->
+            <!--                            android:layout_marginStart="10dp"-->
+            <!--                            android:textColor="@android:color/white"-->
+            <!--                            android:textStyle="bold" />-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:text="Metal Temp:"-->
+            <!--                            android:textSize="14sp"-->
+            <!--                            android:textColor="@color/black" />-->
+            <!--                        <EditText-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="40dp"-->
+            <!--                            android:background="#F5F5F5"-->
+            <!--                            android:padding="8dp"-->
+            <!--                            android:text="500" />-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:text="Metal Qty:"-->
+            <!--                            android:textSize="14sp"-->
+            <!--                            android:textColor="@color/black" />-->
+            <!--                        <EditText-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="40dp"-->
+            <!--                            android:background="#F5F5F5"-->
+            <!--                            android:padding="8dp"-->
+            <!--                            android:text="4T" />-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:text="Ladle No:"-->
+            <!--                            android:textSize="14sp"-->
+            <!--                            android:textColor="@color/black" />-->
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:background="#4285F4"-->
+            <!--                            android:padding="8dp"-->
+            <!--                            android:text="5"-->
+            <!--                            android:textColor="@android:color/white"-->
+            <!--                            android:textStyle="bold" />-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:text="Shift:"-->
+            <!--                            android:textSize="14sp"-->
+            <!--                            android:textColor="@color/black" />-->
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:background="#4285F4"-->
+            <!--                            android:padding="8dp"-->
+            <!--                            android:text="A"-->
+            <!--                            android:textColor="@android:color/white"-->
+            <!--                            android:textStyle="bold" />-->
+            <!--                    </GridLayout>-->
+
+            <!--                    <View-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="1dp"-->
+            <!--                        android:background="#E0E0E0" />-->
+
+            <!--                    &lt;!&ndash; Treatment Timing &ndash;&gt;-->
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:padding="12dp"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <LinearLayout-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:orientation="horizontal"-->
+            <!--                            android:gravity="center_vertical">-->
+
+            <!--                            <ImageView-->
+            <!--                                android:layout_width="20dp"-->
+            <!--                                android:layout_height="20dp"-->
+            <!--                                android:src="@drawable/time"-->
+            <!--                                android:tint="@color/blue"-->
+            <!--                                 />-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="wrap_content"-->
+            <!--                                android:layout_marginStart="8dp"-->
+            <!--                                android:text="Treatment Timing"-->
+            <!--                                android:textStyle="bold"-->
+            <!--                                android:textSize="15sp"-->
+            <!--                                android:textColor="@color/black" />-->
+            <!--                        </LinearLayout>-->
+
+            <!--                        <GridLayout-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:columnCount="4"-->
+            <!--                            android:layout_marginTop="8dp">-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="wrap_content"-->
+            <!--                                android:text="Trt Start Time:"-->
+            <!--                                android:textSize="14sp"-->
+            <!--                                android:textColor="@color/black" />-->
+            <!--                            <Button-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="40dp"-->
+            <!--                                android:backgroundTint="#4285F4"-->
+            <!--                                android:text="Time"-->
+            <!--                                android:textColor="@android:color/white"-->
+            <!--                                android:textStyle="bold" />-->
+            <!--                            <TextView-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="wrap_content"-->
+            <!--                                android:text="Metal In Time:"-->
+            <!--                                android:textSize="14sp"-->
+            <!--                                android:textColor="@color/black" />-->
+            <!--                            <Button-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="40dp"-->
+            <!--                                android:backgroundTint="#4285F4"-->
+            <!--                                android:text="Time"-->
+            <!--                                android:textColor="@android:color/white"-->
+            <!--                                android:textStyle="bold" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="wrap_content"-->
+            <!--                                android:text="Trt Stop Time:"-->
+            <!--                                android:textSize="14sp"-->
+            <!--                                android:textColor="@color/black" />-->
+            <!--                            <Button-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="40dp"-->
+            <!--                                android:backgroundTint="#4285F4"-->
+            <!--                                android:text="Time"-->
+            <!--                                android:textColor="@android:color/white"-->
+            <!--                                android:textStyle="bold" />-->
+            <!--                            <TextView-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="wrap_content"-->
+            <!--                                android:text="Metal Out Time:"-->
+            <!--                                android:textSize="14sp"-->
+            <!--                                android:textColor="@color/black" />-->
+            <!--                            <Button-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="40dp"-->
+            <!--                                android:backgroundTint="#4285F4"-->
+            <!--                                android:text="Time"-->
+            <!--                                android:textColor="@android:color/white"-->
+            <!--                                android:textStyle="bold" />-->
+            <!--                        </GridLayout>-->
+            <!--                    </LinearLayout>-->
+
+            <!--                    <View-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="1dp"-->
+            <!--                        android:background="#E0E0E0" />-->
+
+            <!--                    <GridLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:columnCount="2"-->
+            <!--                        android:padding="12dp">-->
+
+            <!--                        <EditText-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="40dp"-->
+            <!--                            android:background="#F5F5F5"-->
+            <!--                            android:padding="8dp"-->
+            <!--                            android:hint="Ladle In No" />-->
+
+            <!--                        <EditText-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="40dp"-->
+            <!--                            android:background="#F5F5F5"-->
+            <!--                            android:padding="8dp"-->
+            <!--                            android:hint="Ladle Out No" />-->
+            <!--                    </GridLayout>-->
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

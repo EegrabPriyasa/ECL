@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    android:padding="16dp"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -22,8 +21,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp">
+           >
 
             <!-- Company Header -->
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -85,7 +83,12 @@
 
             <!-- User Header -->
             <include layout="@layout/layout_user_header"
-                android:id="@+id/includeUserInfo"/>
+                android:id="@+id/includeUserInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                />
 
             <!-- Step Progress Indicator -->
             <include layout="@layout/layout_system_setup" />
@@ -97,6 +100,8 @@
                 android:layout_marginTop="24dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 app:cardBackgroundColor="@android:color/white">
 
                 <LinearLayout
@@ -146,6 +151,8 @@
                 android:layout_marginTop="24dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 app:cardBackgroundColor="@android:color/white">
 
                 <LinearLayout
@@ -191,6 +198,8 @@
                 android:layout_marginTop="24dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 app:cardBackgroundColor="@android:color/white">
 
                 <LinearLayout
@@ -222,7 +231,7 @@
                     <androidx.viewpager2.widget.ViewPager2
                         android:id="@+id/viewPager"
                         android:layout_width="match_parent"
-                        android:layout_height="1300dp"
+                        android:layout_height="wrap_content"
                         android:overScrollMode="never"
                         android:padding="24dp" />
                 </LinearLayout>

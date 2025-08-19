@@ -1,6 +1,5 @@
-package com.example.myapplication
+package com.example.ecl_project_file.MqttSetup
 
-import android.app.Activity
 import org.eclipse.paho.client.mqttv3.MqttCallback
 
 interface MqttInterface {

@@ -8,46 +8,29 @@
     android:background="#F3F7FF">
 
     <!-- Backend API -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_backend"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="5dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="2dp"
-        app:layout_constraintWidth_percent="0.23"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+    <LinearLayout
+        android:id="@+id/layout1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:padding="12dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/database"
-                    android:layout_marginEnd="6dp"/>
+            android:padding="12dp"
+        android:layout_marginStart="100dp"
+            android:background="@drawable/edit_field_design"
+            app:layout_constraintWidth_percent="0.23"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Backend API"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/database"
                     android:textStyle="bold"
                     android:textSize="14sp"/>
-            </LinearLayout>
-
-            <TextView
+                <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#16BF1A"
@@ -58,46 +41,29 @@
                 android:textSize="12sp"
                 android:layout_marginTop="8dp"/>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+
 
     <!-- MQTT Service -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_mqtt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="2dp"
-        app:layout_constraintWidth_percent="0.23"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/card_backend">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+    <LinearLayout
+        android:id="@+id/layout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:padding="12dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/wifi"
-                    android:layout_marginEnd="6dp"/>
-
-                <TextView
+            android:padding="12dp"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/edit_field_design"
+        app:layout_constraintWidth_percent="0.23"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/layout1">
+        <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="MQTT Service"
+                    android:drawableStart="@drawable/wifi"
+                    android:drawablePadding="5dp"
                     android:textStyle="bold"
                     android:textSize="14sp"/>
-            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -110,99 +76,35 @@
                 android:textSize="12sp"
                 android:layout_marginTop="8dp"/>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <!-- Temp Sensors -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_temp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="2dp"
-        app:layout_constraintWidth_percent="0.23"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/card_mqtt">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="12dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/temparature"
-                    android:tint="#009E60"
-                    android:layout_marginEnd="6dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Temp Sensors"
-                    android:textStyle="bold"
-                    android:textSize="14sp"/>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#16BF1A"
-                android:text="Online"
-                android:textColor="@android:color/white"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="4dp"
-                android:textSize="12sp"
-                android:layout_marginTop="8dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
     <!-- Last Sync -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_sync"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="2dp"
-        app:layout_constraintWidth_percent="0.23"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/card_temp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:padding="12dp">
+            android:padding="12dp"
+             android:layout_marginEnd="100dp"
+            android:background="@drawable/edit_field_design"
+            android:layout_marginStart="100dp"
+            app:layout_constraintWidth_percent="0.23"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/layout2">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/sync"
-                    android:layout_marginEnd="6dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Last Sync"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/sync"
                     android:textStyle="bold"
                     android:textSize="14sp"/>
-            </LinearLayout>
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -216,6 +118,6 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="8dp"/>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,8 +19,8 @@
         app:cardElevation="6dp"
         app:cardBackgroundColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@+id/thirdFragmentUpperPart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintStart_toStartOf="@+id/thirdFragmentUpperPart"
+        app:layout_constraintEnd_toEndOf="@+id/thirdFragmentUpperPart">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
