@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TabScreen.Converter.MpConverterActivity">
+    tools:context=".TabScreen.Converter.MPConverterActivity">
 
     <ScrollView
         android:layout_width="0dp"
@@ -86,13 +86,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/baseLayout"
                 />
-            <include layout="@layout/layout_system_setup"
-                android:id="@+id/includeSystemSetup"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/includeUserInfo"/>
+<!--            <include layout="@layout/layout_system_setup"-->
+<!--                android:id="@+id/includeSystemSetup"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/includeUserInfo"/>-->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardTreatmentInfo"
@@ -104,7 +104,7 @@
                 android:layout_marginStart="10dp"
                 app:layout_constraintEnd_toStartOf="@+id/finalComposition"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/includeSystemSetup"
+                app:layout_constraintTop_toBottomOf="@+id/includeUserInfo"
                 >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -626,7 +626,7 @@
                 android:layout_marginEnd="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/cardTreatmentInfo"
-                app:layout_constraintTop_toBottomOf="@+id/includeSystemSetup">
+                app:layout_constraintTop_toBottomOf="@+id/includeUserInfo">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"

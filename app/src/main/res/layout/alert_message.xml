@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:layout_margin="8dp"
+    android:clipToPadding="false"
+    android:layout_gravity="center"
+    android:background="@drawable/alert_border">
+
+
+
+    <!-- Alert Icon -->
+    <ImageView
+        android:id="@+id/ivAlertIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/danger"
+        android:tint="#B71C1C"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Alert Title -->
+    <TextView
+        android:id="@+id/tvAlertTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alert:"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#B71C1C"
+        app:layout_constraintStart_toEndOf="@id/ivAlertIcon"
+        app:layout_constraintTop_toTopOf="@id/ivAlertIcon"
+        app:layout_constraintBottom_toBottomOf="@id/ivAlertIcon"
+        android:layout_marginStart="8dp" />
+
+    <!-- Alert Message -->
+    <TextView
+        android:id="@+id/tvAlertMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="15-minute converter countdown has expired! Immediate attention required."
+        android:textColor="#B71C1C"
+        android:textSize="14sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/tvAlertTitle"
+        app:layout_constraintTop_toTopOf="@id/tvAlertTitle"
+        app:layout_constraintBottom_toBottomOf="@id/tvAlertTitle"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

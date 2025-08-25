@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTreatmentInfo"
+        android:layout_width="750dp"
+        android:layout_height="420dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+            <!-- Header -->
+            <LinearLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="#4285F4"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/settings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Treatment Ladle Selection And Temperature Acceptance"
+                    android:textStyle="bold"
+                    android:textColor="@color/card_background"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/treatmentLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Treatment Ladle Number"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/headerLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="12dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerLadleNumber"
+                android:layout_width="280dp"
+                android:layout_height="35dp"
+                android:background="@drawable/edit_field_design"
+                app:layout_constraintTop_toBottomOf="@id/treatmentLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/slagLabel"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="12dp"/>
+
+            <!-- Slag Removal Label -->
+            <TextView
+                android:id="@+id/slagLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slag Removal"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/headerLayout"
+                app:layout_constraintStart_toEndOf="@id/spinnerLadleNumber"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Slag Removal Radio Group -->
+            <RadioGroup
+                android:id="@+id/radioGroupSlag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/slagLabel"
+                app:layout_constraintStart_toStartOf="@id/slagLabel"
+                android:layout_marginTop="4dp">
+
+                <RadioButton
+                    android:id="@+id/radioYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radioNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTemperature"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@id/radioGroupSlag"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/compositionBg"
+                    android:padding="12dp">
+
+                    <!-- Section Title -->
+                    <TextView
+                        android:id="@+id/temperatureTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Temperature Acceptance - Ladle No. 2"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+                    <!-- Row 2: Converter Temperature -->
+                    <TextView
+                        android:id="@+id/labelConverterTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Converter Temp (°C):"
+                        android:textStyle="bold"
+
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/temperatureTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="18dp" />
+
+                    <TextView
+                        android:id="@+id/valueConverterTemp"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="1465"
+                        android:background="@drawable/bg_card"
+                        android:padding="8dp"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintStart_toEndOf="@id/labelConverterTemp"
+                        app:layout_constraintTop_toTopOf="@id/labelConverterTemp"
+
+                        />
+
+                    <!-- Row 3: MHF Weight -->
+                    <TextView
+                        android:id="@+id/labelMhfWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MHF Weight (MT):"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/labelConverterTemp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="25dp" />
+
+                    <TextView
+                        android:id="@+id/valueMhfWeight"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="102.3"
+                        android:background="@drawable/bg_card"
+                        android:padding="8dp"
+                        app:layout_constraintStart_toEndOf="@id/labelMhfWeight"
+                        app:layout_constraintTop_toTopOf="@id/labelMhfWeight"
+                        android:layout_marginStart="10dp" />
+
+                    <!-- Row 4: Ladle Temp + Accept Button + Status -->
+                    <TextView
+                        android:id="@+id/labelLadleTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ladle Temp (Before First Pouring)°C:"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/labelMhfWeight"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="25dp" />
+
+                    <TextView
+                        android:id="@+id/valueLadleTemp"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="1460"
+                        android:background="@drawable/bg_card"
+                        android:padding="8dp"
+                        app:layout_constraintStart_toEndOf="@id/labelLadleTemp"
+                        app:layout_constraintTop_toTopOf="@id/labelLadleTemp"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:id="@+id/btnAccept"
+                        android:layout_width="150dp"
+                        android:layout_height="35dp"
+                        android:gravity="center"
+                        android:text="Accept"
+                        android:background="@drawable/button_field_design"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintStart_toEndOf="@id/valueLadleTemp"
+                        app:layout_constraintTop_toTopOf="@id/valueLadleTemp"
+                        android:layout_marginStart="15dp" />
+
+                    <TextView
+                        android:id="@+id/statusText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pending Acceptance"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:background="@drawable/button_outline"
+                        android:padding="4dp"
+                       app:layout_constraintStart_toStartOf="@id/btnAccept"
+                      app:layout_constraintTop_toBottomOf="@id/btnAccept"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="5dp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- First Card: CCM Machine Selection -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_machine_selection"
+        android:layout_width="750dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardTreatmentInfo"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_machine_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CCM Machine Selection"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <include layout="@layout/alert_message"
+                android:id="@+id/alertLayout"
+                android:layout_width="0dp"
+
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_machine_title"/>
+
+            <!-- CCM 1 -->
+            <CheckBox
+                android:id="@+id/chk_ccm1"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:text="CCM 1"
+                android:background="@drawable/check_box_bg"
+                app:layout_constraintTop_toBottomOf="@id/alertLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tv_ccm1_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:textSize="12sp"
+                android:textColor="@android:color/holo_green_dark"
+                app:layout_constraintTop_toBottomOf="@id/chk_ccm1"
+                app:layout_constraintStart_toStartOf="@id/chk_ccm1"
+                app:layout_constraintEnd_toEndOf="@id/chk_ccm1"
+                android:layout_marginTop="4dp" />
+
+            <!-- CCM 2 -->
+            <CheckBox
+                android:id="@+id/chk_ccm2"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:text="CCM 2"
+                android:background="@drawable/check_box_bg"
+                app:layout_constraintTop_toBottomOf="@id/alertLayout"
+                app:layout_constraintStart_toEndOf="@id/chk_ccm1"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tv_ccm2_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:textSize="12sp"
+                android:textColor="@android:color/holo_green_dark"
+                app:layout_constraintTop_toBottomOf="@id/chk_ccm2"
+                app:layout_constraintStart_toStartOf="@id/chk_ccm2"
+                app:layout_constraintEnd_toEndOf="@id/chk_ccm2"
+                android:layout_marginTop="4dp" />
+
+            <!-- CCM 3 -->
+            <CheckBox
+                android:id="@+id/chk_ccm3"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:text="CCM 3"
+                android:background="@drawable/check_box_bg"
+                app:layout_constraintTop_toBottomOf="@id/alertLayout"
+                app:layout_constraintStart_toEndOf="@id/chk_ccm2"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tv_ccm3_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:textSize="12sp"
+                android:textColor="@android:color/holo_green_dark"
+                app:layout_constraintTop_toBottomOf="@id/chk_ccm3"
+                app:layout_constraintStart_toStartOf="@id/chk_ccm3"
+                app:layout_constraintEnd_toEndOf="@id/chk_ccm3"
+                android:layout_marginTop="4dp" />
+
+            <!-- CCM 4 -->
+            <CheckBox
+                android:id="@+id/chk_ccm4"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:text="CCM 4"
+                android:background="@drawable/edit_field_design"
+                app:layout_constraintTop_toBottomOf="@id/alertLayout"
+                app:layout_constraintStart_toEndOf="@id/chk_ccm3"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tv_ccm4_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Idle"
+                android:textSize="12sp"
+                android:textColor="@android:color/holo_red_dark"
+                app:layout_constraintTop_toBottomOf="@id/chk_ccm4"
+                app:layout_constraintStart_toStartOf="@id/chk_ccm4"
+                app:layout_constraintEnd_toEndOf="@id/chk_ccm4"
+                android:layout_marginTop="4dp" />
+
+            <!-- CCM 5 -->
+            <CheckBox
+                android:id="@+id/chk_ccm5"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:text="CCM 5"
+                android:background="@drawable/edit_field_design"
+                app:layout_constraintTop_toBottomOf="@id/alertLayout"
+                app:layout_constraintStart_toEndOf="@id/chk_ccm4"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tv_ccm5_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Idle"
+                android:textSize="12sp"
+                android:textColor="@android:color/holo_red_dark"
+                app:layout_constraintTop_toBottomOf="@id/chk_ccm5"
+                app:layout_constraintStart_toStartOf="@id/chk_ccm5"
+                app:layout_constraintEnd_toEndOf="@id/chk_ccm5"
+                android:layout_marginTop="4dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Second Card: CCM Machine Management -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_machine_management"
+        android:layout_width="750dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/card_machine_selection"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Set Machine Idle Title -->
+            <TextView
+                android:id="@+id/tv_idle_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Machine Idle"
+                android:textStyle="bold"
+                android:textColor="#B22222"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Activate Machine Title -->
+            <TextView
+                android:id="@+id/tv_activate_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activate Machine"
+                android:textStyle="bold"
+                android:textColor="#006400"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Spinner for Active Machine -->
+            <Spinner
+                android:id="@+id/spinner_active_machine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_idle_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/spinner_idle_machine"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Spinner for Idle Machine -->
+            <Spinner
+                android:id="@+id/spinner_idle_machine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_activate_title"
+                app:layout_constraintStart_toEndOf="@id/spinner_active_machine"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp" />
+
+            <!-- Spinner for Idle Reason -->
+            <Spinner
+                android:id="@+id/spinner_idle_reason"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/spinner_active_machine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/et_activation_time"
+
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Activation Time Input -->
+            <EditText
+                android:id="@+id/et_activation_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Activation Time"
+                app:layout_constraintTop_toBottomOf="@id/spinner_idle_machine"
+                app:layout_constraintStart_toEndOf="@id/spinner_idle_reason"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp" />
+
+            <!-- Button: Set Machine Idle -->
+            <Button
+                android:id="@+id/btn_set_idle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Set Machine Idle"
+                app:layout_constraintTop_toBottomOf="@id/spinner_idle_reason"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_activate_machine"
+
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Button: Activate Machine -->
+            <Button
+                android:id="@+id/btn_activate_machine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Activate Machine"
+                app:layout_constraintTop_toBottomOf="@id/et_activation_time"
+                app:layout_constraintStart_toEndOf="@id/btn_set_idle"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="8dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,138 +7,141 @@ import android.util.Log
 
 import org.eclipse.paho.android.service.MqttAndroidClient
 import org.eclipse.paho.client.mqttv3.IMqttActionListener
+import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken
 import org.eclipse.paho.client.mqttv3.IMqttToken
 import org.eclipse.paho.client.mqttv3.MqttCallback
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions
 import org.eclipse.paho.client.mqttv3.MqttException
 import org.eclipse.paho.client.mqttv3.MqttMessage
 
-object MQTTClientBuilder : MqttInterface {
+object MQTTClientBuilder  {
 
-    private val TAG = MQTTClientBuilder::class.java.name
+    private const val SERVER_URI = "ws://15.206.40.168:9883" // ✅ Replace with your broker URI
+    private const val USERNAME = "mqtt"
+    private const val PASSWORD = "temppwd"
 
-    val serverURI = "ws://15.206.40.168:9883"
-    var USERNAME = "mqtt"
-    var PASSWORD = "temppwd"
-//
-//    var serverURI = "tcp://10.232.233.179:8883"//"ws://15.206.40.168:9883"//"tcp://10.232.233.179:8883"//"wss://bl7gvpdm1001.dir.svc.accenture.com:8886"//"tcp://52.172.178.92:1883"//"tcp://abhinesh@broker.emqx.io:1883"
-//    var USERNAME = "mqtt_wishkey"//"mqtt_wishkey"//"mqtt"
-//    var PASSWORD = "Eegrab@123"//"Eegrab@123"//"temppwd"
+    private var mqttClient: MqttAndroidClient? = null
 
-     var mqttClient:MqttAndroidClient?=null
-     //var serverURI = "ws://15.206.40.168:9883"
-     var clientId:String?=null
-
-    fun getInstance(context: Context) : MQTTClientBuilder {
+    /** ✅ Initialize or return existing client */
+    fun getInstance(context: Context): MqttAndroidClient {
         if (mqttClient == null) {
-            clientId = "RPi3${System.currentTimeMillis()}"
-            mqttClient = MqttAndroidClient(context, serverURI, clientId)
-
-            return this
+            mqttClient = MqttAndroidClient(
+                context,
+                SERVER_URI,
+                "AndroidClient-${System.currentTimeMillis()}"
+            )
         }
-        return this
+        return mqttClient!!
     }
 
+    /** ✅ Connect with callbacks */
+    fun connect(
+        context: Context,
+        onConnected: () -> Unit,
+        onDisconnected: (Throwable?) -> Unit,
+        onConnecting: () -> Unit
+    ) {
+        val client = getInstance(context)
+        val options = MqttConnectOptions().apply {
+            isAutomaticReconnect = true
+            isCleanSession = true
+            userName = USERNAME
+            password = PASSWORD.toCharArray()
+            connectionTimeout = 10
+        }
 
-    override fun publish(topic: String , msg: String) {
+        onConnecting()
 
         try {
-            val message = MqttMessage()
-            message.payload = msg.toByteArray()
-            message.qos = 0
-            message.isRetained = false
-            mqttClient?.publish(topic, message, null, object : IMqttActionListener {
+            client.connect(options, null, object : IMqttActionListener {
                 override fun onSuccess(asyncActionToken: IMqttToken?) {
-//                                                Log.d(TAG, "$msg published to $topic")
+                    Log.d("MQTT", "✅ Connected to broker")
+                    onConnected()
                 }
 
                 override fun onFailure(asyncActionToken: IMqttToken?, exception: Throwable?) {
-                    //                        Log.d(TAG, "Failed to publish $msg to $topic")
+                    Log.e("MQTT", "❌ Connection failed: ${exception?.message}")
+                    onDisconnected(exception)
                 }
             })
         } catch (e: MqttException) {
-            e.printStackTrace()
+            Log.e("MQTT", "❌ Exception while connecting: ${e.message}")
+            onDisconnected(e)
         }
-
     }
 
-    override fun publish(topic: String, msg: String, delayMillis: Long) {
-
-        val handler = Handler(Looper.getMainLooper())
-        handler.postDelayed({
-            val mqttMessage = MqttMessage(msg.toByteArray())
-            mqttClient?.publish(topic, mqttMessage)
-            println("Message published after $delayMillis milliseconds")
-        }, delayMillis)
-    }
-
-
-    override fun subscribe(topic: String) {
-
-        mqttClient?.let {
-
-            try {
-                mqttClient?.subscribe(topic, 1, null, object : IMqttActionListener {
-                    override fun onSuccess(asyncActionToken: IMqttToken?) {
-                        Log.d("status", "Subscribed to $topic")
-                    }
-
-                    override fun onFailure(asyncActionToken: IMqttToken?, exception: Throwable?) {
-                        Log.d(TAG, "Failed to subscribe $topic")
-                    }
-                })
-            } catch (e: MqttException) {
-                e.printStackTrace()
-            }
-        }
-
-
-    }
-
-    override fun connect() {
-
-        mqttClient?.let {
-
-            try {
-                mqttClient!!.connect(
-                  setUpConnectionOptions(USERNAME, PASSWORD)
-                    , null, object : IMqttActionListener {
-                    override fun onSuccess(asyncActionToken: IMqttToken?) {
-                        subscribe("akm/d2s/uuid")
-                        subscribe("akm/d2s/emlock") //d2s./kid
-                        subscribe("akm/d2s/kid")
-                        Log.d("TAG", "Connection Success")
-
-                    }
-
-                    override fun onFailure(asyncActionToken: IMqttToken?, exception: Throwable?) {
-                        Log.e("TAG", "Connection failure: ${exception?.message}", exception)
-                    }
-
-                })
-            } catch (e: MqttException) {
-                e.printStackTrace()
+    /** ✅ Disconnect */
+    fun disconnect(onDisconnected: () -> Unit) {
+        mqttClient?.disconnect(null, object : IMqttActionListener {
+            override fun onSuccess(asyncActionToken: IMqttToken?) {
+                Log.d("MQTT", "✅ Disconnected")
+                onDisconnected()
             }
 
-        }
-
+            override fun onFailure(asyncActionToken: IMqttToken?, exception: Throwable?) {
+                Log.e("MQTT", "❌ Disconnect failed: ${exception?.message}")
+                onDisconnected()
+            }
+        })
     }
 
-    override fun setCallBack(callback: MqttCallback) {
-
-        mqttClient?.let {
-
-            mqttClient!!.setCallback(callback)
+    /** ✅ Publish */
+    fun publish(topic: String, msg: String, qos: Int = 1, retained: Boolean = false) {
+        try {
+            val message = MqttMessage(msg.toByteArray()).apply {
+                this.qos = qos
+                isRetained = retained
+            }
+            mqttClient?.publish(topic, message)
+            Log.d("MQTT", "📤 Published to $topic: $msg")
+        } catch (e: Exception) {
+            Log.e("MQTT", "❌ Publish failed: ${e.message}")
         }
-
     }
 
-    fun setUpConnectionOptions(username: String, password: String): MqttConnectOptions? {
-      val connOpts = MqttConnectOptions()
-      connOpts.isCleanSession = true
-      connOpts.userName = username
-      connOpts.password = password.toCharArray()
-      return connOpts
+    /** ✅ Subscribe */
+    fun subscribe(topic: String, qos: Int = 1, onMessage: (String) -> Unit) {
+        try {
+            mqttClient?.subscribe(topic, qos, null, object : IMqttActionListener {
+                override fun onSuccess(asyncActionToken: IMqttToken?) {
+                    Log.d("MQTT", "📥 Subscribed to $topic")
+                }
+
+                override fun onFailure(asyncActionToken: IMqttToken?, exception: Throwable?) {
+                    Log.e("MQTT", "❌ Failed to subscribe $topic: ${exception?.message}")
+                }
+            })
+
+            mqttClient?.setCallback(object : MqttCallback {
+                override fun messageArrived(topic: String?, message: MqttMessage?) {
+                    message?.let { onMessage(it.toString()) }
+                }
+
+                override fun connectionLost(cause: Throwable?) {
+                    Log.e("MQTT", "⚠️ Connection lost: ${cause?.message}")
+                }
+
+                override fun deliveryComplete(token: IMqttDeliveryToken?) {}
+            })
+        } catch (e: MqttException) {
+            Log.e("MQTT", "❌ Subscribe failed: ${e.message}")
+        }
+    }
+
+    /** ✅ Backend "ping" check */
+    fun checkBackendConnection(onResult: (Boolean) -> Unit) {
+        Thread {
+            try {
+                val url = java.net.URL("https://your-backend.com/health") // 🔹 Replace with real API
+                val conn = url.openConnection() as java.net.HttpURLConnection
+                conn.connectTimeout = 5000
+                conn.requestMethod = "GET"
+                val code = conn.responseCode
+                onResult(code == 200)
+            } catch (e: Exception) {
+                onResult(false)
+            }
+        }.start()
     }
 
 

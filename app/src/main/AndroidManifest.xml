@@ -17,22 +17,8 @@
         android:theme="@style/Theme.ECL_project_file"
         tools:targetApi="31">
         <activity
-            android:name=".TabScreen.Converter.SDPConverterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TabScreen.Converter.MpConverterActivity"
+            android:name=".TabScreen.Casting.MPCastingActivity"
             android:exported="true" >
-
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-
-        </activity>
-        <activity
-            android:name=".TabScreen.MiniHeel.MiniHeelPageActivity"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,15 +26,39 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TabScreen.LogIn.LogInActivity"
+            android:name=".TabScreen.Converter.SDPConverterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TabScreen.Converter.MPConverterActivity"
             android:exported="true">
 
-<!--             <intent-filter>-->
-<!--             <action android:name="android.intent.action.MAIN" />-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
 
-<!--             <category android:name="android.intent.category.LAUNCHER" />-->
-<!--             </intent-filter>-->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+
+        </activity>
+        <activity
+            android:name=".TabScreen.MiniHeel.MiniHeelPageActivity"
+            android:exported="true">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".TabScreen.LogIn.LogInActivity"
+            android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />

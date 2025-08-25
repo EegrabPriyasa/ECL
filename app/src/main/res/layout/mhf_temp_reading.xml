@@ -115,17 +115,78 @@
                     android:text="Final"
                     android:layout_marginStart="16dp" />
             </RadioGroup>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardContainer"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                app:layout_constraintTop_toBottomOf="@id/rgTempType"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/tvTitle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Temperature Monitoring Timer"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:drawableStart="@drawable/clock"
+                        android:drawablePadding="8dp" />
+
+
+                    <!-- Timer Text -->
+                    <TextView
+                        android:id="@+id/tvTimer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00"
+                        android:textSize="40sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="16dp" />
+
+                    <!-- Timer Status -->
+                    <TextView
+                        android:id="@+id/timerStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Timer Ready"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        app:layout_constraintTop_toBottomOf="@id/tvTimer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="8dp" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
             <!-- Submit Button -->
             <Button
-                android:id="@+id/btnSubmit"
+                android:id="@+id/btnTempSubmit"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:text="Submit Temperature Data"
                 android:backgroundTint="#666666"
                 android:textColor="@android:color/white"
                 android:layout_marginTop="12dp"
-                app:layout_constraintTop_toBottomOf="@id/rgTempType"
+                android:layout_marginStart="30dp"
+                app:layout_constraintTop_toBottomOf="@id/cardContainer"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
@@ -134,12 +195,11 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/boxColor"
                 android:text="Cancel"
-                android:layout_marginTop="255dp"
-                android:layout_marginStart="325dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="10dp"
                 android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/btnTempSubmit"
+               app:layout_constraintTop_toBottomOf="@+id/cardContainer"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -230,6 +290,8 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:hint="Enter meter reading"
+                android:paddingStart="10dp"
+                android:textSize="14sp"
                 android:background="@drawable/edit_field_design"
                 app:layout_constraintTop_toBottomOf="@id/tvMhfReading"
                 app:layout_constraintStart_toStartOf="parent"
@@ -277,7 +339,7 @@
                 android:id="@+id/tvWeightConfig"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Weight Configuration"
+                android:text="Weight And Ladle Crane Configuration"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:textColor="@color/line"
@@ -338,6 +400,7 @@
                 android:backgroundTint="#666666"
                 android:textColor="@android:color/white"
                 android:layout_marginTop="12dp"
+                android:layout_marginStart="30dp"
                 app:layout_constraintTop_toBottomOf="@id/spCraneSelection"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -347,11 +410,11 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/boxColor"
                 android:text="Cancel"
-                android:layout_marginTop="535dp"
-                android:layout_marginStart="120dp"
+                android:layout_marginTop="585dp"
+                android:layout_marginStart="210dp"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btnSubmitWeight"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

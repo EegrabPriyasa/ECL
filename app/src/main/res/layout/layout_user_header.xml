@@ -78,7 +78,7 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
+                            android:layout_marginStart="28dp"
                             app:cardCornerRadius="12dp"
                             app:cardElevation="0dp"
                             app:cardBackgroundColor="@android:color/transparent"
@@ -117,22 +117,34 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:gravity="center_vertical">
+                        >
 
-                        <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:layout_marginEnd="8dp"
-                            android:src="@drawable/time" />
+                        <TextView
+                            android:id="@+id/session_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fri,22th Aug"
+                            android:textSize="14sp"
+                            android:textColor="@color/info_dark"
+                           />
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="19dp"
+                            android:background="@color/blue"
+                            android:layout_marginStart="10dp"
+                            />
 
                         <TextView
                             android:id="@+id/session_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Session: 10:30 AM"
+                            android:text="11:15:00"
                             android:textSize="14sp"
-                            android:textColor="@color/text_secondary"
+                            android:textColor="@color/info_dark"
+                            android:layout_marginStart="5dp"
                             android:layout_marginEnd="24dp" />
+
+
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -148,6 +160,24 @@
                             android:text="Plant: ECL Main"
                             android:textSize="14sp"
                             android:textColor="@color/text_secondary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="MHF No:"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginStart="20dp"/>
+
+                        <Spinner
+                            android:id="@+id/MhfSpinner"
+                            android:layout_width="110dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/button_bg"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="3dp"
+                            />
+
+
 
                     </LinearLayout>
 
@@ -167,7 +197,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginEnd="16dp">
+                    android:layout_marginEnd="16dp"
+                    >
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -175,7 +206,8 @@
                         android:text="Assigned Department"
                         android:textSize="12sp"
                         android:textColor="@color/text_secondary"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_marginBottom="8dp"
+                        />
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
