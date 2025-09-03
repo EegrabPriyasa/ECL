@@ -38,7 +38,7 @@
                 android:text="Live Temperature Readings"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_large"
                 app:layout_constraintStart_toEndOf="@id/iconTemp"
                 app:layout_constraintTop_toTopOf="@id/iconTemp"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -51,7 +51,7 @@
                 android:text="Temperature :1200°C "
                 android:background="@drawable/edit_field_design"
                 android:padding="10dp"
-                android:textSize="14sp"
+                android:textSize="@dimen/text_medium"
                 android:textColor="#565252"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@id/iconTemp"
@@ -64,6 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MHF Number"
+                android:textSize="@dimen/text_medium"
                 android:textStyle="bold"
                 android:layout_marginTop="12dp"
                 app:layout_constraintTop_toBottomOf="@id/tvSelectedTemp"
@@ -87,6 +88,7 @@
                 android:layout_height="wrap_content"
                 android:text="Temperature Type"
                 android:textStyle="bold"
+                android:textSize="@dimen/text_medium"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@id/spinnerMhf"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -137,7 +139,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Temperature Monitoring Timer"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_large"
                         android:textStyle="bold"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -164,7 +166,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Timer Ready"
-                        android:textSize="14sp"
+                        android:textSize="@dimen/text_medium"
                         android:textColor="@color/gray"
                         app:layout_constraintTop_toBottomOf="@id/tvTimer"
                         app:layout_constraintStart_toStartOf="parent"
@@ -177,11 +179,14 @@
             </androidx.cardview.widget.CardView>
 
             <!-- Submit Button -->
-            <Button
+            <TextView
                 android:id="@+id/btnTempSubmit"
                 android:layout_width="320dp"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:text="Submit Temperature Data"
+                android:textSize="@dimen/text_medium"
+                android:gravity="center"
+                android:background="@drawable/button_field_design"
                 android:backgroundTint="#666666"
                 android:textColor="@android:color/white"
                 android:layout_marginTop="12dp"
@@ -189,12 +194,15 @@
                 app:layout_constraintTop_toBottomOf="@id/cardContainer"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
+            <TextView
                 android:id="@+id/btnCancel"
                 android:layout_width="130dp"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:backgroundTint="@color/boxColor"
                 android:text="Cancel"
+                android:background="@drawable/button_field_design"
+                android:gravity="center"
+                android:textSize="@dimen/text_medium"
                 android:layout_marginTop="13dp"
                 android:layout_marginStart="10dp"
                 android:textColor="@color/black"
@@ -229,7 +237,7 @@
                 android:textStyle="bold"
                 android:drawableStart="@drawable/gauge"
                 android:drawablePadding="8dp"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_large"
                 android:textColor="@color/line"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintTop_toTopOf="parent"
@@ -245,7 +253,7 @@
                 android:padding="8dp"
                 android:text="Daily Alert\nReminder: Submit meter reading before 6:00 AM daily"
                 android:textColor="@android:color/holo_blue_dark"
-                android:textSize="14sp"
+                android:textSize="@dimen/text_medium"
                 app:layout_constraintTop_toBottomOf="@id/titleFurnace"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -257,6 +265,7 @@
                 android:layout_height="wrap_content"
                 android:text="MHF Number"
                 android:textStyle="bold"
+                android:textSize="@dimen/text_medium"
                 android:layout_marginTop="12dp"
                 app:layout_constraintTop_toBottomOf="@id/tvAlert"
                 app:layout_constraintStart_toStartOf="parent"
@@ -279,6 +288,7 @@
                 android:layout_height="wrap_content"
                 android:text="MHF Meter Reading"
                 android:textStyle="bold"
+                android:textSize="@dimen/text_medium"
                 android:layout_marginTop="12dp"
                 app:layout_constraintTop_toBottomOf="@id/spMhfNumber"
                 app:layout_constraintStart_toStartOf="parent"
@@ -291,7 +301,7 @@
                 android:layout_marginTop="5dp"
                 android:hint="Enter meter reading"
                 android:paddingStart="10dp"
-                android:textSize="14sp"
+                android:textSize="@dimen/text_medium"
                 android:background="@drawable/edit_field_design"
                 app:layout_constraintTop_toBottomOf="@id/tvMhfReading"
                 app:layout_constraintStart_toStartOf="parent"
@@ -303,20 +313,23 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Current Time: 5:56:48 PM"
-                android:textSize="14sp"
+                android:textSize="@dimen/text_medium"
                 android:layout_marginTop="12dp"
                 app:layout_constraintTop_toBottomOf="@id/etMhfReading"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- Submit Button -->
-            <Button
+            <TextView
                 android:id="@+id/btnSubmitReading"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:text="Submit Meter Reading"
+                android:textSize="@dimen/text_medium"
                 android:backgroundTint="#666666"
                 android:textColor="@android:color/white"
+                android:gravity="center"
+                android:background="@drawable/button_field_design"
                 android:layout_marginTop="12dp"
                 app:layout_constraintTop_toBottomOf="@id/tvCurrentTime"
                 app:layout_constraintStart_toStartOf="parent"
@@ -334,88 +347,339 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- Weight Configuration -->
             <TextView
-                android:id="@+id/tvWeightConfig"
-                android:layout_width="0dp"
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Weight And Ladle Crane Configuration"
+                android:textSize="@dimen/text_large"
                 android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/line"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintTop_toBottomOf="@id/divider"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                android:layout_marginTop="10dp"
+                android:drawablePadding="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintStart_toStartOf="parent" />
 
+            <!-- Process Selection Title -->
             <TextView
-                android:id="@+id/tvWeight"
+                android:id="@+id/processSelectionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Process Selection"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_large"
+                app:layout_constraintTop_toBottomOf="@id/titleText"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp" />
+
+            <!-- CardView for Process Section -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/processCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Weight"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:layout_marginTop="12dp"
-                app:layout_constraintTop_toBottomOf="@id/tvWeightConfig"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/processSelectionTitle"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/craneProcess"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <!-- Crane Process Overview Title -->
+                    <TextView
+                        android:id="@+id/overviewTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crane Process Overview"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/weightLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/overviewTitle"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <!-- Pair 1: Weight -->
+                        <TextView
+                            android:id="@+id/labelWeight50T"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:text="Weight"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_large"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/valueWeight50T"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:text="100"
+                            android:gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/edit_field_design"
+                            android:textSize="@dimen/text_medium"
+                            app:layout_constraintTop_toBottomOf="@id/labelWeight50T"
+                            app:layout_constraintStart_toStartOf="@id/labelWeight50T" />
+
+                        <!-- Pair 2: Temp -->
+                        <TextView
+                            android:id="@+id/labelWeight15T"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:text="Weight"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_large"
+                            android:layout_marginStart="130dp"
+                            app:layout_constraintTop_toTopOf="@id/labelWeight50T"
+                            app:layout_constraintStart_toEndOf="@id/labelWeight50T" />
+
+                        <TextView
+                            android:id="@+id/valueWeight15T"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:text="200"
+                            android:gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/edit_field_design"
+                            android:textSize="@dimen/text_medium"
+                            app:layout_constraintTop_toBottomOf="@id/labelWeight15T"
+                            app:layout_constraintStart_toStartOf="@id/labelWeight15T" />
+
+                        <!-- Pair 3: Speed -->
+                        <TextView
+                            android:id="@+id/labelWeight10T"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:text="Weight"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_large"
+                            android:layout_marginStart="130dp"
+                            app:layout_constraintTop_toTopOf="@id/labelWeight15T"
+                            app:layout_constraintStart_toEndOf="@id/labelWeight15T" />
+
+                        <TextView
+                            android:id="@+id/valueWeight10T"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:text="300"
+                            android:gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/edit_field_design"
+                            android:textSize="@dimen/text_medium"
+                            app:layout_constraintTop_toBottomOf="@id/labelWeight10T"
+                            app:layout_constraintStart_toStartOf="@id/labelWeight10T" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Crane Buttons Row -->
+                    <LinearLayout
+                        android:id="@+id/craneButtonRow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        app:layout_constraintTop_toBottomOf="@id/weightLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="12dp">
+
+                        <Button
+                            android:id="@+id/crane50"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="50T Crane"
+                            android:textSize="@dimen/text_medium"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/blue" />
+
+                        <Button
+                            android:id="@+id/crane15"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="15T Crane"
+                            android:textSize="@dimen/text_medium"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/green" />
+
+                        <Button
+                            android:id="@+id/crane10"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="10T Crane"
+                            android:textSize="@dimen/text_medium"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/orange" />
+                    </LinearLayout>
+
+
+
+
+
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/spinnerProcess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/craneButtonRow"
+                        app:layout_constraintEnd_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <!-- Spinner for 50T -->
+                        <Spinner
+                            android:id="@+id/spinner50T"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/edit_field_design"
+                            android:padding="8dp"
+                            android:spinnerMode="dropdown"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/spinner15T"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginEnd="8dp" />
+
+                        <!-- Spinner for 15T -->
+                        <Spinner
+                            android:id="@+id/spinner15T"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/edit_field_design"
+                            android:padding="8dp"
+                            android:spinnerMode="dropdown"
+                            app:layout_constraintStart_toEndOf="@id/spinner50T"
+                            app:layout_constraintEnd_toStartOf="@id/spinner10T"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginHorizontal="8dp" />
+
+                        <!-- Spinner for 10T -->
+                        <Spinner
+                            android:id="@+id/spinner10T"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/edit_field_design"
+                            android:padding="8dp"
+                            android:spinnerMode="dropdown"
+                            app:layout_constraintStart_toEndOf="@id/spinner15T"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginStart="8dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/submitProcess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/spinnerProcess"
+                        app:layout_constraintEnd_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <!-- Spinner for 50T -->
+                        <TextView
+                            android:id="@+id/btnSubmit50T"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/button_field_design"
+                            android:backgroundTint="@color/text_secondary"
+                            android:padding="8dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/btnSubmit15T"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginEnd="8dp" />
+
+                        <!-- Spinner for 15T -->
+                        <TextView
+                            android:id="@+id/btnSubmit15T"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/edit_field_design"
+                            android:padding="8dp"
+                            android:spinnerMode="dropdown"
+                            app:layout_constraintStart_toEndOf="@id/btnSubmit50T"
+                            app:layout_constraintEnd_toStartOf="@id/btnSubmit10T"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginHorizontal="8dp" />
+
+                        <!-- Spinner for 10T -->
+                        <TextView
+                            android:id="@+id/btnSubmit10T"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/edit_field_design"
+                            android:padding="8dp"
+                            android:spinnerMode="dropdown"
+                            app:layout_constraintStart_toEndOf="@id/btnSubmit15T"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginStart="8dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                    <!-- Furnace Range -->
+                    <TextView
+                        android:id="@+id/furnaceRange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Furnace Range: 1 to 5"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintTop_toBottomOf="@id/spinnerProcess"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="12dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
             <TextView
-                android:id="@+id/tvWeightValue"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="5dp"
-                android:paddingStart="5dp"
-                android:background="@drawable/edit_field_design"
-                app:layout_constraintTop_toBottomOf="@id/tvWeight"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <!-- Ladle Crane Selection -->
-            <TextView
-                android:id="@+id/tvCraneSelection"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Ladle Crane Selection"
-                android:textStyle="bold"
-                android:layout_marginTop="12dp"
-                app:layout_constraintTop_toBottomOf="@id/tvWeightValue"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <Spinner
-                android:id="@+id/spCraneSelection"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/edit_field_design"
-                app:layout_constraintTop_toBottomOf="@id/tvCraneSelection"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-            <Button
-                android:id="@+id/btnSubmitWeight"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:text="Submit Weight"
+                android:id="@+id/btnWeightSubmit"
+                android:layout_width="320dp"
+                android:layout_height="35dp"
+                android:text="Submit Weight Data"
+                android:textSize="@dimen/text_medium"
+                android:gravity="center"
+                android:background="@drawable/button_field_design"
                 android:backgroundTint="#666666"
                 android:textColor="@android:color/white"
                 android:layout_marginTop="12dp"
-                android:layout_marginStart="30dp"
-                app:layout_constraintTop_toBottomOf="@id/spCraneSelection"
+                android:layout_marginStart="60dp"
+                app:layout_constraintTop_toBottomOf="@id/processCard"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:id="@+id/btnCancelWeight"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/btnWeightCancel"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
                 android:backgroundTint="@color/boxColor"
                 android:text="Cancel"
-                android:layout_marginTop="585dp"
-                android:layout_marginStart="210dp"
+                android:textSize="@dimen/text_medium"
+                android:background="@drawable/button_field_design"
+                android:gravity="center"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="10dp"
                 android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/btnWeightSubmit"
+                app:layout_constraintTop_toBottomOf="@+id/processCard"/>
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- CardView: Required from MHF -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardMetalNeed"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        android:background="@color/warning_light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Header: Metal need for Casting from MHF -->
+            <TextView
+                android:id="@+id/tvMetalNeed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Metal need for Casting from MHF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Sub-title: Required from MHF -->
+            <TextView
+                android:id="@+id/tvRequiredFromMHF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Required from MHF"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/blue"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tvMetalNeed"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Quantity Label -->
+            <TextView
+                android:id="@+id/tvQuantityLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity (Ladles):"
+                android:textSize="14sp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tvRequiredFromMHF"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Quantity Value -->
+            <TextView
+                android:id="@+id/tvQuantityValue"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_card"
+                android:padding="6dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvQuantityLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Temperature Label -->
+            <TextView
+                android:id="@+id/tvTempLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperature (°C):"
+                android:textSize="14sp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tvQuantityLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Temperature Value -->
+            <TextView
+                android:id="@+id/tvTempValue"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="1470"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_card"
+                android:padding="6dp"
+               app:layout_constraintTop_toBottomOf="@+id/tvQuantityValue"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView: Active Treatment Section -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardActiveTreatment"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardMetalNeed"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvActiveTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active Treatment Section"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tvRunningTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Running Treatment Ladles"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvActiveTitle"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Ladle Info Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLadleInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="8dp"
+                app:cardBackgroundColor="#FFF3E6"
+                app:cardElevation="3dp"
+                app:layout_constraintTop_toBottomOf="@id/tvRunningTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp">
+
+                    <!-- Ladle No -->
+                    <TextView
+                        android:id="@+id/tvLadleNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Treatment Ladle No. 3"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <!-- Running Chip -->
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Running"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:background="@drawable/edit_field_design"
+                        android:padding="6dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView: MHF Composition Analysis -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardComposition"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/cardActiveTreatment"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvCompositionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MHF Composition Analysis"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Sub Info -->
+            <TextView
+                android:id="@+id/tvLadleInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ladle Id: 3"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/tvCompositionTitle"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- C% -->
+            <TextView
+                android:id="@+id/tvCLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C%:"
+                android:textSize="14sp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tvLadleInfo"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.7"
+                android:textSize="14sp"
+                android:textColor="#028A0F"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvCLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Mg% -->
+            <TextView
+                android:id="@+id/tvMgLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mg%:"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvCLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMgValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.6"
+                android:textSize="14sp"
+                android:textColor="#028A0F"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvMgLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Si% -->
+            <TextView
+                android:id="@+id/tvSiLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Si%:"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvMgLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSiValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.108"
+                android:textSize="14sp"
+                android:textColor="#028A0F"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvSiLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Mn% -->
+            <TextView
+                android:id="@+id/tvMnLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mn%:"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSiLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMnValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.024"
+                android:textSize="14sp"
+                android:textColor="#028A0F"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvMnLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- S% -->
+            <TextView
+                android:id="@+id/tvSLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S%:"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvMnLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.078"
+                android:textSize="14sp"
+                android:textColor="#028A0F"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvSLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- P% -->
+            <TextView
+                android:id="@+id/tvPLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P%:"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00019"
+                android:textSize="14sp"
+                android:textColor="#028A0F"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvPLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Ti% -->
+            <TextView
+                android:id="@+id/tvTiLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ti%:"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvPLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTiValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.02"
+                android:textSize="14sp"
+                android:textColor="#028A0F"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvTiLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Cr% -->
+            <TextView
+                android:id="@+id/tvCrLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cr%:"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTiLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCrValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.15"
+                android:textSize="14sp"
+                android:textColor="#028A0F"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvCrLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Metal Temp -->
+            <TextView
+                android:id="@+id/tvMetalTempLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Metal Temp:"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvCrLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMetalTempValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1465"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvMetalTempLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardConverterTimer"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toBottomOf="@+id/cardComposition"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvConverterTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Converter Out Timer"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Time Remaining Label -->
+            <TextView
+                android:id="@+id/tvTimeRemainingLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time Remaining:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvConverterTitle"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Time Remaining Value -->
+            <TextView
+                android:id="@+id/tvTimeRemainingValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 min"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTimeRemainingLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardMicrostructure"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardConverterTimer"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Icon and Title -->
+            <ImageView
+                android:id="@+id/ivAnalysisIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/microscope"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvAnalysisTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Microstructure Analysis"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toTopOf="@id/ivAnalysisIcon"
+                app:layout_constraintStart_toEndOf="@id/ivAnalysisIcon" />
+
+            <!-- Analysis Completed Info -->
+            <TextView
+                android:id="@+id/tvAnalysisCompleted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✔ Analysis completed at 8/19/2024, 6:20 PM"
+                android:textColor="#388E3C"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/ivAnalysisIcon"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Analysis Type -->
+            <TextView
+                android:id="@+id/tvAnalysisTypeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analysis Type"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tvAnalysisCompleted"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Spinner
+                android:id="@+id/spAnalysisType"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_field_design"
+                app:layout_constraintTop_toBottomOf="@id/tvAnalysisTypeLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Time and Pipe Dia -->
+            <TextView
+                android:id="@+id/tvTimeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/spAnalysisType"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/etTime"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:hint="12:45"
+                android:padding="5dp"
+                android:background="@color/border_color"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTimeLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/etPipeDia"
+                />
+
+            <TextView
+                android:id="@+id/tvPipeDiaLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pipe Dia (mm)"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="120dp"
+                app:layout_constraintTop_toBottomOf="@id/spAnalysisType"
+                app:layout_constraintStart_toEndOf="@id/tvTimeLabel" />
+
+            <TextView
+                android:id="@+id/etPipeDia"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:hint="28"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/border_color"
+                app:layout_constraintTop_toBottomOf="@id/tvPipeDiaLabel"
+                app:layout_constraintStart_toEndOf="@id/etTime"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- No/mm² -->
+            <TextView
+                android:id="@+id/tvNoPerMmLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No/mm²"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/etTime"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/etNoPerMm"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:hint="95"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/border_color"
+                app:layout_constraintTop_toBottomOf="@id/tvNoPerMmLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Pearlite and Carbide -->
+            <TextView
+                android:id="@+id/tvPearliteLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pearlite %"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/etNoPerMm"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/etPearlite"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:hint="78.2"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/border_color"
+                app:layout_constraintTop_toBottomOf="@id/tvPearliteLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/etCarbide"
+                />
+
+            <TextView
+                android:id="@+id/tvCarbideLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carbide %"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="90dp"
+                app:layout_constraintTop_toBottomOf="@id/etNoPerMm"
+                app:layout_constraintStart_toEndOf="@id/tvPearliteLabel" />
+
+            <TextView
+                android:id="@+id/etCarbide"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:hint="21.8"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:background="@color/border_color"
+                app:layout_constraintTop_toBottomOf="@id/tvCarbideLabel"
+                app:layout_constraintStart_toEndOf="@id/etPearlite"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <!-- Class and Size Range -->
+            <TextView
+                android:id="@+id/tvClassLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Class and Size Range"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/etPearlite"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/etClassRange"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:hint="Class B, Size 25-35mm"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/border_color"
+                app:layout_constraintTop_toBottomOf="@id/tvClassLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- RA Status -->
+            <TextView
+                android:id="@+id/tvRaStatusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RA Status"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/etClassRange"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Spinner
+                android:id="@+id/spRaStatus"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_field_design"
+                app:layout_constraintTop_toBottomOf="@id/tvRaStatusLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- From - To fields -->
+            <LinearLayout
+                android:id="@+id/llFromTo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/alert_border"
+                android:layout_marginTop="12dp"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@id/spRaStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:id="@+id/etFrom"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="From"
+                    android:inputType="number" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/etTo"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@color/white"
+                    android:hint="To"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <!-- Submit Button -->
+            <TextView
+                android:id="@+id/btnSubmit"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:text="Submit Analysis"
+                android:background="@drawable/button_field_design"
+                android:backgroundTint="@color/line"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/llFromTo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

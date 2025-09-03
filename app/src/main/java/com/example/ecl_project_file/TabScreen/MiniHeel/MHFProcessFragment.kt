@@ -7,12 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.example.ecl_project_file.HelperClasses.SpinnerHelper
 import com.example.ecl_project_file.R
-
+import com.example.ecl_project_file.databinding.FragmentFirst2Binding
+import com.example.ecl_project_file.databinding.FragmentThirdBinding
 
 
 class MHFProcessFragment : Fragment() {
-
+  private var _binding: FragmentThirdBinding? = null
+  private val binding get() = _binding!!
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -25,12 +28,25 @@ class MHFProcessFragment : Fragment() {
   ): View? {
     // Inflate the layout for this fragment
 
-    val view = inflater.inflate(R.layout.fragment_third, container, false)
-
-    val button = view.findViewById<Button>(R.id.btnMHFLadleOut)
-
-    return view
+    _binding = FragmentThirdBinding.inflate(inflater, container, false)
+    return binding.root
   }
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+    //mbfSpinner() // Safe to use binding here
+  }
+
+//  private fun mbfSpinner() {
+//    SpinnerHelper.setupSpinner(
+//      context = requireActivity(),
+//      spinner = _binding!!.thirdFragmentUpperPart.spDeptMHF ,
+//      items = listOf("MP","SDP","Fitting")
+//    )
+//  }
+//  override fun onDestroyView() {
+//    super.onDestroyView()
+//    _binding = null
+//  }
 
 
 }

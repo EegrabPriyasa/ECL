@@ -3,13 +3,14 @@ package com.example.ecl_project_file.HelperClasses
 import android.R
 import android.content.Context
 import android.view.View
+import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 
-object SpinnerHelper
-{
+object SpinnerHelper {
   fun setupSpinner(
     context: Context,
     spinner: Spinner,
@@ -20,7 +21,21 @@ object SpinnerHelper
     val spinnerItems = mutableListOf(defaultText)
     spinnerItems.addAll(items)
 
-    val adapter = ArrayAdapter(context, R.layout.simple_spinner_item, spinnerItems)
+    // Use a custom ArrayAdapter to modify text size programmatically
+    val adapter = object : ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, spinnerItems) {
+      override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+        val view = super.getView(position, convertView, parent)
+        (view as TextView).textSize = 12f  // Selected item text size
+        return view
+      }
+
+      override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup): View {
+        val view = super.getDropDownView(position, convertView, parent)
+        (view as TextView).textSize = 12f  // Dropdown item text size
+        return view
+      }
+    }
+
     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
     spinner.adapter = adapter
 

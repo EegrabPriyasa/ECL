@@ -7,100 +7,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="180dp"
         android:background="@drawable/bg_card"
         android:padding="16dp"
-        android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <!-- Icon -->
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/scale"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!-- Title -->
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="MS Scrap"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/icon"
-            app:layout_constraintStart_toEndOf="@id/icon"
-            app:layout_constraintTop_toTopOf="@id/icon" />
-
-        <!-- Recommended label -->
-        <TextView
-            android:id="@+id/recommended_label"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Recommended (kg)"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@id/actual_label"
-
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/icon" />
-
-        <!-- Actual label -->
-        <TextView
-            android:id="@+id/actual_label"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Actual (kg)"
-            android:textStyle="bold"
-            android:layout_marginStart="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/recommended_label"
-            app:layout_constraintTop_toBottomOf="@id/icon" />
-
-        <!-- Recommended value -->
-        <TextView
-            android:id="@+id/recommended_value"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:background="@drawable/button_bg"
-            android:gravity="center_vertical"
-            android:paddingStart="18dp"
-            android:layout_marginTop="5dp"
-            android:text="25"
-            app:layout_constraintEnd_toStartOf="@id/actual_value"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recommended_label" />
-
-        <!-- Actual value -->
-        <TextView
-            android:id="@+id/actual_value"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:background="@drawable/button_bg"
-            android:gravity="center_vertical"
-            android:paddingStart="18dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="5dp"
-            android:text="24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/recommended_value"
-            app:layout_constraintTop_toBottomOf="@id/actual_label" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout2"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:background="@drawable/bg_card"
-        android:padding="16dp"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout1">
 
         <!-- Icon -->
         <ImageView
@@ -141,9 +53,9 @@
             android:id="@+id/actual_label1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
             android:text="Actual (kg)"
             android:textStyle="bold"
-            android:layout_marginStart="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/recommended_label1"
             app:layout_constraintTop_toBottomOf="@id/icon1" />
@@ -152,21 +64,154 @@
         <TextView
             android:id="@+id/recommended_value1"
             android:layout_width="0dp"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/button_bg"
             android:gravity="center_vertical"
             android:paddingStart="18dp"
-            android:layout_marginTop="5dp"
             android:text="25"
             app:layout_constraintEnd_toStartOf="@id/actual_value2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recommended_label1" />
 
+        <TextView
+            android:id="@+id/btnRecommendedValue"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_field_design"
+            android:backgroundTint="@color/info_dark"
+            android:gravity="center"
+            android:text="Accept Recommended"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@id/recommended_value1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recommended_value1" />
+
         <!-- Actual value -->
         <TextView
             android:id="@+id/actual_value2"
             android:layout_width="0dp"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_bg"
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:text="24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/recommended_value1"
+            app:layout_constraintTop_toBottomOf="@id/actual_label1" />
+
+        <TextView
+            android:id="@+id/btnActualValue"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_field_design"
+            android:backgroundTint="@color/info_dark"
+            android:gravity="center"
+            android:text="Accept Actual"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@id/actual_value2"
+
+            app:layout_constraintStart_toStartOf="@+id/actual_value2"
+            app:layout_constraintTop_toBottomOf="@id/actual_value2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/bg_card"
+        android:padding="16dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout1">
+
+        <!-- Icon -->
+        <ImageView
+            android:id="@+id/iconFeSi"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/scale"
+            android:tint="@color/warning_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/titleFeSi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Fe-Si"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iconFeSi"
+            app:layout_constraintStart_toEndOf="@id/iconFeSi"
+            app:layout_constraintTop_toTopOf="@id/iconFeSi" />
+
+        <!-- Recommended label -->
+        <TextView
+            android:id="@+id/recommended_labelFeSi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Recommended (kg)"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/actual_labelFeSi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iconFeSi" />
+
+        <!-- Actual label -->
+        <TextView
+            android:id="@+id/actual_labelFeSi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actual (kg)"
+            android:textStyle="bold"
+            android:layout_marginStart="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/recommended_labelFeSi"
+            app:layout_constraintTop_toBottomOf="@id/iconFeSi" />
+
+        <!-- Recommended value -->
+        <TextView
+            android:id="@+id/recommended_valueFeSi"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button_bg"
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:layout_marginTop="5dp"
+            android:text="25"
+            app:layout_constraintEnd_toStartOf="@id/actual_valueFeSi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recommended_labelFeSi" />
+        <TextView
+            android:id="@+id/btnRecommendedValueFeSi"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:background="@drawable/button_field_design"
+            android:backgroundTint="@color/info_dark"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:text="Accept Recommended"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@id/recommended_valueFeSi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recommended_valueFeSi" />
+
+        <!-- Actual value -->
+        <TextView
+            android:id="@+id/actual_valueFeSi"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
             android:background="@drawable/button_bg"
             android:gravity="center_vertical"
             android:paddingStart="18dp"
@@ -174,8 +219,23 @@
             android:layout_marginTop="5dp"
             android:text="24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/recommended_value1"
-            app:layout_constraintTop_toBottomOf="@id/actual_label1" />
+            app:layout_constraintStart_toEndOf="@id/recommended_valueFeSi"
+            app:layout_constraintTop_toBottomOf="@id/actual_labelFeSi" />
+
+        <TextView
+            android:id="@+id/btnActualValueFeSi"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_field_design"
+            android:backgroundTint="@color/info_dark"
+            android:gravity="center"
+            android:text="Accept Actual"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@id/actual_valueFeSi"
+            app:layout_constraintStart_toStartOf="@+id/actual_valueFeSi"
+            app:layout_constraintTop_toBottomOf="@id/actual_valueFeSi" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -798,6 +858,7 @@
 
             <!-- Dropdown -->
             <Spinner
+                android:id="@+id/spDeptMHF"
                 android:layout_width="300dp"
                 android:layout_height="30dp"
                 android:background="@drawable/button_bg"

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text  Size -->
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_medium">14sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_large_extra">20sp</dimen>
+
+    <!-- Edit Text Sizes -->
+    <dimen name="edittext_height">40dp</dimen>
+    <dimen name="edittext_width">250dp</dimen>
+</resources>

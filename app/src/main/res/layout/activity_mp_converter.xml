@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal">
+
             <LinearLayout
                 android:id="@+id/baseLayout"
                 android:layout_width="match_parent"
@@ -58,9 +59,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ELECTROSTEEL CASTINGS LIMITED"
+                        android:text="@string/electrosteel_castings_limited"
                         android:textColor="@color/text_primary"
-                        android:textSize="28sp"
+                        android:textSize="@dimen/text_large_extra"
                         android:textStyle="bold" />
 
                     <TextView
@@ -69,7 +70,7 @@
                         android:layout_marginTop="4dp"
                         android:text="Converter Production System"
                         android:textColor="@color/primary_blue"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/text_large" />
 
                 </LinearLayout>
 
@@ -79,38 +80,35 @@
                 android:id="@+id/includeUserInfo"
                 layout="@layout/layout_user_header"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/baseLayout"
-                />
-<!--            <include layout="@layout/layout_system_setup"-->
-<!--                android:id="@+id/includeSystemSetup"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/includeUserInfo"/>-->
+                app:layout_constraintTop_toBottomOf="@id/baseLayout" />
+            <!--            <include layout="@layout/layout_system_setup"-->
+            <!--                android:id="@+id/includeSystemSetup"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/includeUserInfo"/>-->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardTreatmentInfo"
                 android:layout_width="750dp"
                 android:layout_height="660dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="10dp"
                 app:layout_constraintEnd_toStartOf="@+id/finalComposition"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/includeUserInfo"
-                >
+                app:layout_constraintTop_toBottomOf="@+id/includeUserInfo">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
+                    android:layout_height="wrap_content">
 
                     <!-- Header -->
                     <LinearLayout
@@ -120,9 +118,9 @@
                         android:background="#4285F4"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="12dp"
-                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
                             android:layout_width="20dp"
@@ -134,9 +132,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:text="Treatment Information"
-                            android:textStyle="bold"
                             android:textColor="@android:color/white"
-                            android:textSize="16sp" />
+                            android:textSize="@dimen/text_medium"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <!-- Dept -->
@@ -144,421 +142,446 @@
                         android:id="@+id/tvDept"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Dept:"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="30dp"
-                        app:layout_constraintTop_toBottomOf="@id/headerLayout"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:text="@string/dept"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/headerLayout" />
 
                     <TextView
                         android:id="@+id/tvDeptValue"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_bg_converter"
-                        android:backgroundTint="@color/blue"
-                        android:padding="8dp"
-                        android:text="MP"
-                        android:gravity="center"
-                        android:textColor="@android:color/white"
-                        android:textStyle="bold"
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvDept"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:background="@drawable/button_bg_converter"
+                        android:backgroundTint="@color/blue"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="MP"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDept" />
 
                     <!-- Trt No -->
                     <TextView
                         android:id="@+id/tvTrtNo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Trt No:"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
                         android:layout_marginStart="135dp"
                         android:layout_marginTop="30dp"
-                        app:layout_constraintTop_toBottomOf="@id/headerLayout"
-                        app:layout_constraintStart_toEndOf="@id/tvDept" />
+                        android:text="Trt No:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintStart_toEndOf="@id/tvDept"
+                        app:layout_constraintTop_toBottomOf="@id/headerLayout" />
 
                     <TextView
                         android:id="@+id/tvTrtNoValue"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_bg_converter"
-                        android:backgroundTint="@color/blue"
-                        android:padding="8dp"
-                        android:text="1"
-                        android:gravity="center"
-                        android:textColor="@android:color/white"
-                        android:textStyle="bold"
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvTrtNo"
-                        app:layout_constraintStart_toEndOf="@id/tvDeptValue" />
+                        android:background="@drawable/button_bg_converter"
+                        android:backgroundTint="@color/blue"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="1"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/tvDeptValue"
+                        app:layout_constraintTop_toBottomOf="@id/tvTrtNo" />
 
                     <!-- Metal Form -->
                     <TextView
                         android:id="@+id/tvMetalForm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Metal Form:"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
                         android:layout_marginStart="125dp"
                         android:layout_marginTop="30dp"
-                        app:layout_constraintTop_toBottomOf="@id/headerLayout"
-                        app:layout_constraintStart_toEndOf="@id/tvTrtNo" />
+                        android:text="Metal Form:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintStart_toEndOf="@id/tvTrtNo"
+                        app:layout_constraintTop_toBottomOf="@id/headerLayout" />
 
                     <TextView
                         android:id="@+id/tvMetalFormValue"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_bg_converter"
-                        android:backgroundTint="@color/blue"
-                        android:padding="8dp"
-                        android:text="MHF"
-                        android:gravity="center"
-                        android:textColor="@android:color/white"
-                        android:textStyle="bold"
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvMetalForm"
-                        app:layout_constraintStart_toEndOf="@id/tvTrtNoValue" />
+                        android:background="@drawable/button_bg_converter"
+                        android:backgroundTint="@color/blue"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="MHF"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/tvTrtNoValue"
+                        app:layout_constraintTop_toBottomOf="@id/tvMetalForm" />
 
                     <!-- Metal Temp -->
                     <TextView
                         android:id="@+id/tvMetalTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Metal Temp:"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
                         android:layout_marginStart="85dp"
                         android:layout_marginTop="30dp"
-                        app:layout_constraintTop_toBottomOf="@id/headerLayout"
-                        app:layout_constraintStart_toEndOf="@id/tvMetalForm" />
+                        android:text="Metal Temp:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintStart_toEndOf="@id/tvMetalForm"
+                        app:layout_constraintTop_toBottomOf="@id/headerLayout" />
 
                     <TextView
                         android:id="@+id/tvMetalTempValue"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_bg_converter"
-                        android:backgroundTint="@color/lightBlue"
-                        android:padding="8dp"
-                        android:text="1450"
-                        android:gravity="center"
-                        android:textColor="@color/textColor"
-                        android:textStyle="bold"
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvMetalTemp"
-                        app:layout_constraintStart_toEndOf="@id/tvMetalFormValue" />
+                        android:background="@drawable/button_bg_converter"
+                        android:backgroundTint="@color/lightBlue"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="1450"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/tvMetalFormValue"
+                        app:layout_constraintTop_toBottomOf="@id/tvMetalTemp" />
 
                     <!-- Metal Qty -->
                     <TextView
                         android:id="@+id/tvMetalQty"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Metal Qty:"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="30dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvDeptValue"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:text="Metal Qty:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDeptValue" />
 
                     <EditText
                         android:id="@+id/etMetalQtyValue"
                         android:layout_width="140dp"
-                        android:layout_height="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="5dp"
                         android:background="@drawable/button_bg_converter"
                         android:backgroundTint="@color/lightBlue"
                         android:gravity="center"
                         android:inputType="text"
                         android:text="4T"
                         android:textColor="@color/black"
-                        android:layout_marginStart="50dp"
-                        android:layout_marginTop="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvMetalQty"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvMetalQty" />
 
                     <!-- Ladle No -->
                     <TextView
                         android:id="@+id/tvLadleNo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Treatment Ladle In No:"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="30dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvTrtNoValue"
-                        app:layout_constraintStart_toEndOf="@id/etMetalQtyValue" />
+                        android:text="Treatment Ladle In No:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintStart_toEndOf="@id/etMetalQtyValue"
+                        app:layout_constraintTop_toBottomOf="@id/tvTrtNoValue" />
 
                     <TextView
                         android:id="@+id/tvLadleNoValue"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="5dp"
                         android:background="@drawable/button_bg_converter"
                         android:backgroundTint="@color/blue"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="5"
                         android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_medium"
                         android:textStyle="bold"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvLadleNo"
-                        app:layout_constraintStart_toEndOf="@id/etMetalQtyValue" />
+                        app:layout_constraintStart_toEndOf="@id/etMetalQtyValue"
+                        app:layout_constraintTop_toBottomOf="@id/tvLadleNo" />
 
                     <!-- Shift -->
                     <TextView
                         android:id="@+id/tvShift"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Shift:"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
                         android:layout_marginStart="40dp"
                         android:layout_marginTop="30dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvMetalFormValue"
-                        app:layout_constraintStart_toEndOf="@id/tvLadleNo" />
+                        android:text="Shift:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintStart_toEndOf="@id/tvLadleNo"
+                        app:layout_constraintTop_toBottomOf="@id/tvMetalFormValue" />
 
                     <TextView
                         android:id="@+id/tvShiftValue"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="98dp"
+                        android:layout_marginTop="5dp"
                         android:background="@drawable/button_bg_converter"
                         android:backgroundTint="@color/blue"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="A"
                         android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_medium"
                         android:textStyle="bold"
-                        android:layout_marginStart="98dp"
-                        android:layout_marginTop="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvShift"
-                        app:layout_constraintStart_toEndOf="@id/tvLadleNoValue" />
+                        app:layout_constraintStart_toEndOf="@id/tvLadleNoValue"
+                        app:layout_constraintTop_toBottomOf="@id/tvShift" />
 
                     <View
                         android:id="@+id/divider"
                         android:layout_width="0dp"
                         android:layout_height="1dp"
-                        android:background="@android:color/darker_gray"
-                        android:layout_marginTop="20dp"
                         android:layout_marginStart="42dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginEnd="42dp"
                         android:layout_marginBottom="12dp"
-                        app:layout_constraintTop_toBottomOf="@id/etMetalQtyValue"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/etMetalQtyValue" />
+
                     <TextView
                         android:id="@+id/tvTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sequence of 3 Timestamps"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
                         android:layout_marginStart="25dp"
                         android:layout_marginTop="10dp"
                         android:drawableStart="@drawable/clock"
                         android:drawablePadding="8dp"
+                        android:text="Sequence of 3 Timestamps"
                         android:textColor="@android:color/black"
-                        app:layout_constraintTop_toBottomOf="@+id/divider"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider" />
 
                     <!-- Step 1 -->
                     <TextView
                         android:id="@+id/tvStep1Circle"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:gravity="center"
-                        android:background="@drawable/dot_selected"
-                        android:text="1"
                         android:layout_marginTop="30dp"
+                        android:background="@drawable/dot_selected"
+                        android:gravity="center"
+                        android:text="1"
                         android:textColor="@android:color/white"
-                        app:layout_constraintTop_toBottomOf="@id/tvTitle"
-                        app:layout_constraintStart_toStartOf="parent"
+                        android:textSize="@dimen/text_medium"
                         app:layout_constraintEnd_toStartOf="@id/tvStep2Circle"
-                        app:layout_constraintHorizontal_chainStyle="spread" />
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
                     <TextView
                         android:id="@+id/tvStep1Label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Metal IN"
-                        android:textStyle="bold"
                         android:textColor="@android:color/black"
-                        app:layout_constraintTop_toBottomOf="@id/tvStep1Circle"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@id/tvStep1Circle"
                         app:layout_constraintStart_toStartOf="@id/tvStep1Circle"
-                        app:layout_constraintEnd_toEndOf="@id/tvStep1Circle" />
+                        app:layout_constraintTop_toBottomOf="@id/tvStep1Circle" />
 
                     <Button
                         android:id="@+id/btnStep1Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Time"
                         android:backgroundTint="@color/blue"
+                        android:text="Time"
                         android:textColor="@android:color/white"
-                        app:layout_constraintTop_toBottomOf="@id/tvStep1Label"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="@id/tvStep1Circle"
                         app:layout_constraintStart_toStartOf="@id/tvStep1Circle"
-                        app:layout_constraintEnd_toEndOf="@id/tvStep1Circle" />
+                        app:layout_constraintTop_toBottomOf="@id/tvStep1Label" />
 
                     <TextView
                         android:id="@+id/tvStep1Timestamp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="--:--:--"
                         android:background="@drawable/bg_card"
                         android:padding="6dp"
+                        android:text="--:--:--"
                         android:textColor="#666"
-                        app:layout_constraintTop_toBottomOf="@id/btnStep1Time"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="@id/tvStep1Circle"
                         app:layout_constraintStart_toStartOf="@id/tvStep1Circle"
-                        app:layout_constraintEnd_toEndOf="@id/tvStep1Circle" />
+                        app:layout_constraintTop_toBottomOf="@id/btnStep1Time" />
 
                     <!-- Step 2 -->
                     <TextView
                         android:id="@+id/tvStep2Circle"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:gravity="center"
                         android:background="@drawable/dot_selected"
+                        android:gravity="center"
                         android:text="2"
                         android:textColor="@android:color/white"
-                        app:layout_constraintTop_toTopOf="@id/tvStep1Circle"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toStartOf="@id/tvStep3Circle"
                         app:layout_constraintStart_toEndOf="@id/tvStep1Circle"
-                        app:layout_constraintEnd_toStartOf="@id/tvStep3Circle" />
+                        app:layout_constraintTop_toTopOf="@id/tvStep1Circle" />
 
                     <TextView
                         android:id="@+id/tvStep2Label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Treatment End"
-                        android:textStyle="bold"
                         android:textColor="@android:color/black"
-                        app:layout_constraintTop_toBottomOf="@id/tvStep2Circle"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@id/tvStep2Circle"
                         app:layout_constraintStart_toStartOf="@id/tvStep2Circle"
-                        app:layout_constraintEnd_toEndOf="@id/tvStep2Circle" />
+                        app:layout_constraintTop_toBottomOf="@id/tvStep2Circle" />
 
                     <Button
                         android:id="@+id/btnStep2Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Time"
                         android:backgroundTint="@color/blue"
+                        android:text="Time"
                         android:textColor="@android:color/white"
-                        app:layout_constraintTop_toBottomOf="@id/tvStep2Label"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="@id/tvStep2Circle"
                         app:layout_constraintStart_toStartOf="@id/tvStep2Circle"
-                        app:layout_constraintEnd_toEndOf="@id/tvStep2Circle" />
+                        app:layout_constraintTop_toBottomOf="@id/tvStep2Label" />
 
                     <TextView
                         android:id="@+id/tvStep2Timestamp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="--:--:--"
                         android:background="@drawable/bg_card"
                         android:padding="6dp"
+                        android:text="--:--:--"
                         android:textColor="#666"
-                        app:layout_constraintTop_toBottomOf="@id/btnStep2Time"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="@id/tvStep2Circle"
                         app:layout_constraintStart_toStartOf="@id/tvStep2Circle"
-                        app:layout_constraintEnd_toEndOf="@id/tvStep2Circle" />
+                        app:layout_constraintTop_toBottomOf="@id/btnStep2Time" />
 
                     <!-- Step 3 -->
                     <TextView
                         android:id="@+id/tvStep3Circle"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:gravity="center"
                         android:background="@drawable/dot_selected"
+                        android:gravity="center"
                         android:text="3"
                         android:textColor="@android:color/white"
-                        app:layout_constraintTop_toTopOf="@id/tvStep1Circle"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/tvStep2Circle"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toTopOf="@id/tvStep1Circle" />
 
                     <TextView
                         android:id="@+id/tvStep3Label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Metal Out"
-                        android:textStyle="bold"
                         android:textColor="@android:color/black"
-                        app:layout_constraintTop_toBottomOf="@id/tvStep3Circle"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@id/tvStep3Circle"
                         app:layout_constraintStart_toStartOf="@id/tvStep3Circle"
-                        app:layout_constraintEnd_toEndOf="@id/tvStep3Circle" />
+                        app:layout_constraintTop_toBottomOf="@id/tvStep3Circle" />
 
                     <Button
                         android:id="@+id/btnStep3Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Time"
                         android:backgroundTint="@color/blue"
+                        android:text="Time"
                         android:textColor="@android:color/white"
-                        app:layout_constraintTop_toBottomOf="@id/tvStep3Label"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="@id/tvStep3Circle"
                         app:layout_constraintStart_toStartOf="@id/tvStep3Circle"
-                        app:layout_constraintEnd_toEndOf="@id/tvStep3Circle" />
+                        app:layout_constraintTop_toBottomOf="@id/tvStep3Label" />
 
                     <TextView
                         android:id="@+id/tvStep3Timestamp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="--:--:--"
                         android:background="@drawable/bg_card"
                         android:padding="6dp"
+                        android:text="--:--:--"
                         android:textColor="#666"
-                        app:layout_constraintTop_toBottomOf="@id/btnStep3Time"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="@id/tvStep3Circle"
                         app:layout_constraintStart_toStartOf="@id/tvStep3Circle"
-                        app:layout_constraintEnd_toEndOf="@id/tvStep3Circle" />
+                        app:layout_constraintTop_toBottomOf="@id/btnStep3Time" />
 
                     <!-- Divider -->
                     <View
                         android:id="@+id/divider1st"
                         android:layout_width="0dp"
                         android:layout_height="1dp"
-                        android:background="#E0E0E0"
                         android:layout_marginStart="30dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="30dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvStep1Timestamp"
-                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="#E0E0E0"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="16dp"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvStep1Timestamp" />
 
                     <!-- Return Metal -->
                     <TextView
                         android:id="@+id/tvReturnLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Return Metal - Time:"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/black"
-                        app:layout_constraintTop_toBottomOf="@id/divider1st"
-                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="15dp"
                         android:layout_marginTop="12dp"
-                        android:layout_marginStart="15dp"/>
+                        android:text="Return Metal - Time:"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider1st" />
 
-                    <Button
+                    <TextView
                         android:id="@+id/btnReturn"
                         android:layout_width="150dp"
                         android:layout_height="40dp"
-                        android:text="Return"
+                        android:layout_marginStart="18dp"
                         android:backgroundTint="#FF8000"
+                        android:text="Return"
                         android:textColor="@android:color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_medium"
+                        android:background="@drawable/button_field_design"
                         app:layout_constraintStart_toEndOf="@id/tvReturnLabel"
-                        app:layout_constraintTop_toTopOf="@id/tvReturnLabel"
-                        android:layout_marginStart="18dp"/>
+                        app:layout_constraintTop_toTopOf="@id/tvReturnLabel" />
 
                     <TextView
                         android:id="@+id/tvReturnTimestamp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="--:--:--"
+                        android:layout_marginStart="8dp"
                         android:background="@drawable/bg_card"
                         android:padding="6dp"
+                        android:text="--:--:--"
                         android:textColor="#FF8000"
+                        android:textSize="@dimen/text_medium"
                         app:layout_constraintStart_toEndOf="@id/btnReturn"
-                        app:layout_constraintTop_toTopOf="@id/btnReturn"
-                        android:layout_marginStart="8dp"/>
+                        app:layout_constraintTop_toTopOf="@id/btnReturn" />
 
                     <TextView
                         android:id="@+id/tvMHF"
@@ -566,48 +589,51 @@
                         android:layout_height="wrap_content"
                         android:text="→ MHF"
                         android:textColor="@android:color/darker_gray"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBaseline_toBaselineOf="@id/tvReturnLabel" />
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tvReturnLabel"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
                     <!-- Divider -->
                     <View
                         android:id="@+id/divider2nd"
                         android:layout_width="0dp"
                         android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+
                         android:background="#E0E0E0"
-                        app:layout_constraintTop_toBottomOf="@id/tvReturnTimestamp"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="16dp"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvReturnTimestamp" />
 
                     <!-- Ladle Out No -->
                     <TextView
                         android:id="@+id/tvLadleOut"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ladle Out No:"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/black"
-                        app:layout_constraintTop_toBottomOf="@id/divider2nd"
-                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="15dp"
                         android:layout_marginTop="12dp"
-                        android:layout_marginStart="15dp"/>
+                        android:text="Ladle Out No:"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider2nd" />
 
                     <TextView
                         android:id="@+id/etLadleOut"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:background="@drawable/edit_field_design"
-                        android:text=""
-                        android:padding="8dp"
                         android:layout_marginStart="15dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="15dp"
                         android:layout_marginBottom="10dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvLadleOut"
-                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="@drawable/edit_field_design"
+                        android:padding="8dp"
+                        android:text=""
+                        android:textSize="@dimen/text_medium"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="5dp"/>
-
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvLadleOut" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -619,11 +645,11 @@
                 android:id="@+id/finalComposition"
                 android:layout_width="0dp"
                 android:layout_height="620dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/cardTreatmentInfo"
                 app:layout_constraintTop_toBottomOf="@+id/includeUserInfo">
@@ -641,294 +667,295 @@
                         android:padding="8dp"
                         android:text="Last metal Composition (Residual Mg)"
                         android:textColor="@android:color/white"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_medium"
                         android:textStyle="bold"
-                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <!-- Trt No -->
                     <TextView
                         android:id="@+id/tvTrtNoCom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Trt No:"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvHeader"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:text="Trt No:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
 
                     <TextView
                         android:id="@+id/tvTrtNoComValue"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_bg_converter"
-                        android:backgroundTint="@color/lightBlue1"
-                        android:padding="8dp"
-                        android:gravity="center"
-                        android:text=""
-                        android:textColor="@android:color/white"
-                        android:textStyle="bold"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="15dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvHeader"
-                        app:layout_constraintStart_toEndOf="@id/tvTrtNoCom" />
+                        android:background="@drawable/button_bg_converter"
+                        android:backgroundTint="@color/lightBlue1"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text=""
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/tvTrtNoCom"
+                        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
 
                     <!-- TimeStamp -->
                     <TextView
                         android:id="@+id/tvTimeStampCom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TimeStamp:"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@+id/tvTrtNoComValue"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:text="TimeStamp:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTrtNoComValue" />
 
                     <TextView
                         android:id="@+id/tvTimeStampComValue"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_bg_converter"
-                        android:backgroundTint="@color/lightBlue1"
-                        android:padding="8dp"
-                        android:gravity="center"
-                        android:text=""
-                        android:textColor="@android:color/white"
-                        android:textStyle="bold"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="15dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvTrtNoComValue"
-                        app:layout_constraintStart_toEndOf="@id/tvTimeStampCom" />
+                        android:background="@drawable/button_bg_converter"
+                        android:backgroundTint="@color/lightBlue1"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text=""
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/tvTimeStampCom"
+                        app:layout_constraintTop_toBottomOf="@id/tvTrtNoComValue" />
 
                     <!-- C% -->
                     <TextView
                         android:id="@+id/tvCLabel"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="C%:"
-                        android:textSize="14sp"
                         android:textColor="@android:color/black"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvTimeStampComValue"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toStartOf="@id/tvCValue"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/tvCValue" />
+                        app:layout_constraintTop_toBottomOf="@id/tvTimeStampComValue" />
 
                     <TextView
                         android:id="@+id/tvCValue"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="1.77"
-                        android:textSize="14sp"
                         android:textColor="@color/primary_blue"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvTimeStampComValue"
-                        app:layout_constraintStart_toEndOf="@id/tvCLabel"
+                        android:textSize="@dimen/text_medium"
                         app:layout_constraintEnd_toEndOf="parent"
-                         />
+                        app:layout_constraintStart_toEndOf="@id/tvCLabel"
+                        app:layout_constraintTop_toBottomOf="@id/tvTimeStampComValue" />
 
                     <!-- Si% -->
                     <TextView
                         android:id="@+id/tvSiLabel"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="Si%:"
-                        android:textSize="14sp"
                         android:textColor="@android:color/black"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvCLabel"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toStartOf="@id/tvSiValue"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/tvSiValue" />
+                        app:layout_constraintTop_toBottomOf="@id/tvCLabel" />
 
                     <TextView
                         android:id="@+id/tvSiValue"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="3.70"
-                        android:textSize="14sp"
                         android:textColor="@color/primary_blue"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvCValue"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/tvSiLabel"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/tvCValue" />
 
                     <!-- Mn% -->
                     <TextView
                         android:id="@+id/tvMnLabel"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="Mn%:"
-                        android:textSize="14sp"
                         android:textColor="@android:color/black"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvSiLabel"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toStartOf="@id/tvMnValue"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/tvMnValue" />
+                        app:layout_constraintTop_toBottomOf="@id/tvSiLabel" />
 
                     <TextView
                         android:id="@+id/tvMnValue"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="0.113"
-                        android:textSize="14sp"
                         android:textColor="@color/primary_blue"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvSiValue"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/tvMnLabel"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/tvSiValue" />
 
                     <!-- S% -->
                     <TextView
                         android:id="@+id/tvSLabel"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="S%:"
-                        android:textSize="14sp"
                         android:textColor="@android:color/black"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvMnLabel"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toStartOf="@id/tvSValue"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/tvSValue" />
+                        app:layout_constraintTop_toBottomOf="@id/tvMnLabel" />
 
                     <TextView
                         android:id="@+id/tvSValue"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="0.0002"
-                        android:textSize="14sp"
                         android:textColor="@color/primary_blue"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvMnValue"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/tvSLabel"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/tvMnValue" />
 
                     <!-- P% -->
                     <TextView
                         android:id="@+id/tvPLabel"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="P%:"
-                        android:textSize="14sp"
                         android:textColor="@android:color/black"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvSLabel"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toStartOf="@id/tvPValue"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/tvPValue" />
+                        app:layout_constraintTop_toBottomOf="@id/tvSLabel" />
 
                     <TextView
                         android:id="@+id/tvPValue"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="0.026"
-                        android:textSize="14sp"
                         android:textColor="@color/primary_blue"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvSValue"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/tvPLabel"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/tvSValue" />
 
                     <!-- C.E -->
                     <TextView
                         android:id="@+id/tvCELabel"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="C.E:"
-                        android:textSize="14sp"
                         android:textColor="@android:color/black"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvPLabel"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toStartOf="@id/tvCEValue"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/tvCEValue" />
+                        app:layout_constraintTop_toBottomOf="@id/tvPLabel" />
 
                     <TextView
                         android:id="@+id/tvCEValue"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="0.00024"
-                        android:textSize="14sp"
                         android:textColor="@color/primary_blue"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvPValue"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/tvCELabel"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/tvPValue" />
 
                     <!-- Mg% -->
                     <TextView
                         android:id="@+id/tvMgLabel"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="Mg%:"
-                        android:textSize="14sp"
                         android:textColor="@android:color/black"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvCELabel"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toStartOf="@id/tvMgValue"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/tvMgValue" />
+                        app:layout_constraintTop_toBottomOf="@id/tvCELabel" />
 
                     <TextView
                         android:id="@+id/tvMgValue"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/edit_field_design"
                         android:padding="12dp"
                         android:text="3.995%"
-                        android:textSize="14sp"
                         android:textColor="@color/primary_blue"
-                        android:background="@drawable/edit_field_design"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvCEValue"
+                        android:textSize="@dimen/text_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/tvMgLabel"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/tvCEValue" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -942,9 +969,9 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
-                app:layout_constraintTop_toBottomOf="@id/cardTreatmentInfo"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/cardTreatmentInfo">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -979,7 +1006,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Si%"
                                 android:textColor="@android:color/black"
-                                android:textSize="14sp"
+                                android:textSize="@dimen/text_medium"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -987,7 +1014,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="1.75"
                                 android:textColor="@android:color/holo_blue_dark"
-                                android:textSize="16sp" />
+                                android:textSize="@dimen/text_medium" />
                         </LinearLayout>
 
                         <!-- S -->
@@ -1005,7 +1032,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="S%"
                                 android:textColor="@android:color/black"
-                                android:textSize="14sp"
+                                android:textSize="@dimen/text_medium"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -1013,7 +1040,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="0.0261"
                                 android:textColor="@android:color/holo_blue_dark"
-                                android:textSize="16sp" />
+                                android:textSize="@dimen/text_medium" />
                         </LinearLayout>
 
                         <!-- Cr -->
@@ -1031,7 +1058,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Cr%"
                                 android:textColor="@android:color/black"
-                                android:textSize="14sp"
+                                android:textSize="@dimen/text_medium"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -1039,7 +1066,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="0.0079"
                                 android:textColor="@android:color/holo_blue_dark"
-                                android:textSize="16sp" />
+                                android:textSize="@dimen/text_medium" />
                         </LinearLayout>
 
                         <!-- P -->
@@ -1057,7 +1084,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="P%"
                                 android:textColor="@android:color/black"
-                                android:textSize="14sp"
+                                android:textSize="@dimen/text_medium"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -1065,7 +1092,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="0.00024"
                                 android:textColor="@android:color/holo_blue_dark"
-                                android:textSize="16sp" />
+                                android:textSize="@dimen/text_medium" />
                         </LinearLayout>
 
                         <!-- Mn -->
@@ -1083,7 +1110,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Mn%"
                                 android:textColor="@android:color/black"
-                                android:textSize="14sp"
+                                android:textSize="@dimen/text_medium"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -1091,7 +1118,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="0.0821"
                                 android:textColor="@android:color/holo_blue_dark"
-                                android:textSize="16sp" />
+                                android:textSize="@dimen/text_medium" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -1101,49 +1128,49 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawablePadding="8dp"
-                    android:text="Form MHF Composition"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                        android:text="Form MHF Composition"
+                        android:textSize="@dimen/text_large"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <!-- Composition Row -->
                     <LinearLayout
                         android:id="@+id/mhfCompositionRow"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
                         android:orientation="horizontal"
                         android:weightSum="5"
-                        android:gravity="center"
-                        android:layout_marginTop="16dp"
-                        app:layout_constraintTop_toBottomOf="@id/titleMHF"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/titleMHF">
 
                         <!-- Si -->
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical"
+                            android:background="@drawable/bg_card"
                             android:gravity="center"
-                            android:padding="8dp"
-                            android:background="@drawable/bg_card">
+                            android:orientation="vertical"
+                            android:padding="8dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Si%"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="@android:color/black"/>
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/text_medium"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="1.75"
-                                android:textSize="16sp"
-                                android:textColor="@android:color/holo_blue_dark"/>
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textSize="@dimen/text_medium" />
                         </LinearLayout>
 
                         <!-- S -->
@@ -1151,25 +1178,25 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical"
+                            android:background="@drawable/bg_card"
                             android:gravity="center"
-                            android:padding="8dp"
-                            android:background="@drawable/bg_card">
+                            android:orientation="vertical"
+                            android:padding="8dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="S%"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="@android:color/black"/>
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/text_medium"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="0.0261"
-                                android:textSize="16sp"
-                                android:textColor="@android:color/holo_blue_dark"/>
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textSize="@dimen/text_medium" />
                         </LinearLayout>
 
                         <!-- Cr -->
@@ -1177,25 +1204,25 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical"
+                            android:background="@drawable/bg_card"
                             android:gravity="center"
-                            android:padding="8dp"
-                            android:background="@drawable/bg_card">
+                            android:orientation="vertical"
+                            android:padding="8dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Cr%"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="@android:color/black"/>
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/text_medium"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="0.0079"
-                                android:textSize="16sp"
-                                android:textColor="@android:color/holo_blue_dark"/>
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textSize="@dimen/text_medium" />
                         </LinearLayout>
 
                         <!-- P -->
@@ -1203,25 +1230,25 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical"
+                            android:background="@drawable/bg_card"
                             android:gravity="center"
-                            android:padding="8dp"
-                            android:background="@drawable/bg_card">
+                            android:orientation="vertical"
+                            android:padding="8dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="P%"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="@android:color/black"/>
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/text_medium"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="0.00024"
-                                android:textSize="16sp"
-                                android:textColor="@android:color/holo_blue_dark"/>
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textSize="@dimen/text_medium" />
                         </LinearLayout>
 
                         <!-- Mn -->
@@ -1229,25 +1256,25 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical"
+                            android:background="@drawable/bg_card"
                             android:gravity="center"
-                            android:padding="8dp"
-                            android:background="@drawable/bg_card">
+                            android:orientation="vertical"
+                            android:padding="8dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Mn%"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="@android:color/black"/>
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/text_medium"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="0.0821"
-                                android:textSize="16sp"
-                                android:textColor="@android:color/holo_blue_dark"/>
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:textSize="@dimen/text_medium" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -1258,11 +1285,11 @@
                         android:id="@+id/divider1"
                         android:layout_width="0dp"
                         android:layout_height="1dp"
-                        android:background="#DDDDDD"
                         android:layout_marginVertical="12dp"
-                        app:layout_constraintTop_toBottomOf="@id/mhfCompositionRow"
+                        android:background="#DDDDDD"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/mhfCompositionRow" />
 
                     <!-- Fe-Si Dropdown -->
                     <!-- Fe-Si -->
@@ -1270,188 +1297,200 @@
                         android:id="@+id/labelFeSi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fe-Si:"
-                        android:textSize="18sp"
                         android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@+id/divider1"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:text="Fe-Si:"
+                        android:textSize="@dimen/text_large_extra"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
                     <Spinner
                         android:id="@+id/spinnerFeSi"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                       app:layout_constraintTop_toBottomOf="@+id/labelFeSi"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="20dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginStart="16dp"/>
+                        app:layout_constraintTop_toBottomOf="@+id/labelFeSi" />
+
                     <Spinner
                         android:id="@+id/spinnerYes"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@+id/labelFeSi"
-                       app:layout_constraintStart_toEndOf="@id/spinnerFeSi"
-                        android:layout_marginStart="16dp"/>
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintStart_toEndOf="@id/spinnerFeSi"
+                        app:layout_constraintTop_toBottomOf="@+id/labelFeSi" />
 
                     <!-- Ce -->
                     <TextView
                         android:id="@+id/labelCe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="90dp"
                         android:text="Ce:"
-                        android:textSize="18sp"
-                        app:layout_constraintTop_toTopOf="@id/labelFeSi"
+                        android:textSize="@dimen/text_large_extra"
                         app:layout_constraintStart_toEndOf="@id/spinnerYes"
-                        android:layout_marginStart="90dp"/>
+                        app:layout_constraintTop_toTopOf="@id/labelFeSi" />
 
-                    <Button
+                    <TextView
                         android:id="@+id/btnCeYes"
                         android:layout_width="120dp"
                         android:layout_height="45dp"
-                        android:text="Yes"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/button_field_design"
                         android:backgroundTint="@color/success_dark"
-                        app:layout_constraintTop_toBottomOf="@+id/labelCe"
+                        android:gravity="center"
+                        android:text="Yes"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_large"
                         app:layout_constraintStart_toStartOf="@+id/labelCe"
-                        android:layout_marginStart="16dp"/>
+                        app:layout_constraintTop_toBottomOf="@+id/labelCe" />
 
-                    <Button
+                    <TextView
                         android:id="@+id/btnCeNo"
                         android:layout_width="120dp"
                         android:layout_height="45dp"
-                        android:text="No"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/button_field_design"
                         android:backgroundTint="@color/error_dark"
-                        app:layout_constraintTop_toTopOf="@id/btnCeYes"
+                        android:gravity="center"
+                        android:text="No"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_large"
                         app:layout_constraintStart_toEndOf="@id/btnCeYes"
-                        android:layout_marginStart="8dp"/>
+                        app:layout_constraintTop_toTopOf="@id/btnCeYes" />
 
                     <!-- Mg -->
                     <TextView
                         android:id="@+id/labelMg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="140dp"
                         android:text="Mg:"
                         android:textSize="18sp"
-                        app:layout_constraintTop_toTopOf="@id/labelCe"
                         app:layout_constraintStart_toEndOf="@id/btnCeNo"
-                        android:layout_marginStart="140dp"/>
+                        app:layout_constraintTop_toTopOf="@id/labelCe" />
 
                     <TextView
                         android:id="@+id/labelRecommended"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
                         android:text="Recommended:"
                         android:textSize="17sp"
-                        android:layout_marginTop="15dp"
-                        app:layout_constraintTop_toBottomOf="@id/labelMg"
-                        app:layout_constraintStart_toStartOf="@id/labelMg"/>
+                        app:layout_constraintStart_toStartOf="@id/labelMg"
+                        app:layout_constraintTop_toBottomOf="@id/labelMg" />
 
                     <TextView
                         android:id="@+id/tvRecommended"
                         android:layout_width="90dp"
                         android:layout_height="30dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_card"
+                        android:gravity="center"
                         android:inputType="numberDecimal"
                         android:text="0.00"
-                        android:gravity="center"
-                        android:background="@drawable/bg_card"
                         app:layout_constraintBaseline_toBaselineOf="@id/labelRecommended"
-                        app:layout_constraintStart_toEndOf="@id/labelRecommended"
-                        android:layout_marginStart="8dp"/>
+                        app:layout_constraintStart_toEndOf="@id/labelRecommended" />
 
                     <TextView
                         android:id="@+id/labelActual"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
                         android:text="Actual:"
                         android:textSize="18sp"
-                        android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@id/labelRecommended"
-                        app:layout_constraintStart_toStartOf="@id/labelRecommended"/>
+                        app:layout_constraintStart_toStartOf="@id/labelRecommended"
+                        app:layout_constraintTop_toBottomOf="@id/labelRecommended" />
 
                     <TextView
                         android:id="@+id/edtActual"
                         android:layout_width="90dp"
                         android:layout_height="30dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_card"
+                        android:gravity="center"
                         android:inputType="numberDecimal"
                         android:text="0.00"
-                        android:gravity="center"
-                        android:background="@drawable/bg_card"
                         app:layout_constraintBaseline_toBaselineOf="@id/labelActual"
-                        app:layout_constraintStart_toEndOf="@id/labelActual"
-                        android:layout_marginStart="8dp"/>
+                        app:layout_constraintStart_toEndOf="@id/labelActual" />
 
-                    <Button
+                    <TextView
                         android:id="@+id/btnAccept"
                         android:layout_width="150dp"
                         android:layout_height="45dp"
-                        android:text="Accept"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/button_field_design"
                         android:backgroundTint="@color/success_dark"
-                        app:layout_constraintTop_toBottomOf="@id/edtActual"
+                        android:gravity="center"
+                        android:text="Accept"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_large"
                         app:layout_constraintStart_toStartOf="@id/edtActual"
-                        android:layout_marginTop="8dp"/>
+                        app:layout_constraintTop_toBottomOf="@id/edtActual" />
 
                     <!-- Reason for Mg% range out -->
                     <TextView
                         android:id="@+id/labelReason"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
                         android:text="Reason for Mg% range out:"
                         android:textSize="16sp"
-                        app:layout_constraintTop_toBottomOf="@id/btnAccept"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginTop="32dp"/>
+                        app:layout_constraintTop_toBottomOf="@id/btnAccept" />
 
                     <Spinner
                         android:id="@+id/spinnerReason"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
                         android:background="@drawable/bg_card"
-                        app:layout_constraintTop_toBottomOf="@id/labelReason"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="8dp"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/labelReason" />
 
                     <!-- Add more Mg -->
                     <TextView
                         android:id="@+id/labelAddMoreMg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
                         android:text="Add more Mg:"
                         android:textSize="16sp"
-                        app:layout_constraintTop_toBottomOf="@id/spinnerReason"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginTop="24dp"/>
+                        app:layout_constraintTop_toBottomOf="@id/spinnerReason" />
 
                     <TextView
                         android:id="@+id/tvAddMg"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/edit_field_design"
+                        android:inputType="numberDecimal"
                         android:paddingStart="10dp"
                         android:text=""
-                        android:inputType="numberDecimal"
-                        android:background="@drawable/edit_field_design"
-                        app:layout_constraintTop_toBottomOf="@id/labelAddMoreMg"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="8dp"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/labelAddMoreMg" />
 
                     <!-- Submit -->
                     <TextView
                         android:id="@+id/btnSubmit"
                         android:layout_width="120dp"
                         android:layout_height="40dp"
-                        android:text="Submit"
-                        android:textColor="@color/white"
-                        android:gravity="center"
+                        android:layout_marginTop="32dp"
                         android:background="@drawable/edit_field_design"
                         android:backgroundTint="@color/line"
-                        app:layout_constraintTop_toBottomOf="@id/tvAddMg"
+                        android:gravity="center"
+                        android:text="Submit"
+                        android:textColor="@color/white"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginTop="32dp"/>
+                        app:layout_constraintTop_toBottomOf="@id/tvAddMg" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
-
-
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

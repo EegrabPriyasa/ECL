@@ -18,7 +18,7 @@ class LogInActivity : AppCompatActivity() {
     binding=ActivityLogInBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
-   deptSpinner()
+   //deptSpinner()
     binding.btnLogin.setOnClickListener {
       val intent =Intent(this,MiniHeelPageActivity::class.java)
       startActivity(intent)
@@ -26,14 +26,14 @@ class LogInActivity : AppCompatActivity() {
     }
   }
 
-  private fun deptSpinner() {
-    SpinnerHelper.setupSpinner(
-      context = this,
-      spinner = binding.deptSpinner,
-      items = listOf("MiniHeel", "MP Converter", "SDP Converter","MP Casting","SDP F","SDP Casting")
-    ) { selected ->
-      // Handle selected item
-      println("Activity Selected: $selected")
-    }
-  }
+//  private fun deptSpinner() {
+//    SpinnerHelper.setupSpinner(
+//      context = this,
+//      spinner = binding.deptSpinner,
+//      items = listOf("MiniHeel", "MP Converter", "SDP Converter","MP Casting","SDP F","SDP Casting")
+//    ) { selected ->
+//      // Handle selected item
+//      println("Activity Selected: $selected")
+//    }
+//  }
 }

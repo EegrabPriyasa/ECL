@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Left Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/leftCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_margin="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rightCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Metal Composition Control"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/line"
+                android:drawablePadding="8dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Ladle Sequence -->
+            <TextView
+                android:id="@+id/tvLadleSeq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Treatment No:"
+                android:textColor="@color/info_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinnerLadleSeq"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edit_field_design"
+                android:spinnerMode="dropdown"
+                app:layout_constraintTop_toBottomOf="@id/tvLadleSeq"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/bg_card"
+                android:padding="16dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinnerLadleSeq">
+
+                <!-- Icon -->
+                <ImageView
+                    android:id="@+id/icon1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/scale"
+                    android:tint="@color/warning_dark"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Title -->
+                <TextView
+                    android:id="@+id/title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Fe-Si"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/icon1"
+                    app:layout_constraintStart_toEndOf="@id/icon1"
+                    app:layout_constraintTop_toTopOf="@id/icon1" />
+
+                <!-- Recommended label -->
+                <TextView
+                    android:id="@+id/recommended_label1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Recommended (kg)"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/actual_label1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/icon1" />
+
+                <!-- Actual label -->
+                <TextView
+                    android:id="@+id/actual_label1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Actual (kg)"
+                    android:textStyle="bold"
+                    android:layout_marginStart="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/recommended_label1"
+                    app:layout_constraintTop_toBottomOf="@id/icon1" />
+
+                <!-- Recommended value -->
+                <TextView
+                    android:id="@+id/recommended_value1"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_bg"
+                    android:gravity="center_vertical"
+                    android:paddingStart="18dp"
+                    android:layout_marginTop="5dp"
+                    android:text="25"
+                    app:layout_constraintEnd_toStartOf="@id/actual_value2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recommended_label1" />
+                <TextView
+                    android:id="@+id/btnRecommendedValue"
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/button_field_design"
+                    android:backgroundTint="@color/info_dark"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/white"
+                    android:text="Accept Recommended"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@id/recommended_value1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recommended_value1" />
+
+                <!-- Actual value -->
+                <TextView
+                    android:id="@+id/actual_value2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_bg"
+                    android:gravity="center_vertical"
+                    android:paddingStart="18dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="5dp"
+                    android:text="24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/recommended_value1"
+                    app:layout_constraintTop_toBottomOf="@id/actual_label1" />
+
+                <TextView
+                    android:id="@+id/btnActualValue"
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/button_field_design"
+                    android:backgroundTint="@color/info_dark"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="25dp"
+                    android:textColor="@color/white"
+                    android:text="Accept Actual"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@id/actual_value2"
+
+                    app:layout_constraintTop_toBottomOf="@id/actual_value2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Temp -->
+            <TextView
+                android:id="@+id/tvTargetC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Target C%:"
+                android:textColor="@color/info_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout2" />
+
+            <TextView
+                android:id="@+id/tvTargetCValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_field_design"
+                android:text=""
+                android:padding="8dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTargetC"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvTargetSiValue" />
+
+            <!-- Weight -->
+            <TextView
+                android:id="@+id/tvTargetSi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Target Si:"
+                android:textColor="@color/info_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvTargetC"
+                app:layout_constraintTop_toBottomOf="@id/layout2"/>
+
+            <TextView
+                android:id="@+id/tvTargetSiValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_field_design"
+                android:padding="8dp"
+                android:text=""
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTargetSi"
+           app:layout_constraintStart_toEndOf="@+id/tvTargetCValue"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rightCardMgAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTargetSiValue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+            >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/compositionBg"
+                    android:padding="16dp"
+                    >
+
+                    <!-- Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="METAL FOR Mg. TREATMENT (SDP-F Final CT
+test)"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:drawablePadding="8dp"
+                        android:textColor="@color/info_dark"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Grid of Compositions -->
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="3"
+                        android:rowCount="2"
+                        android:alignmentMode="alignMargins"
+                        android:useDefaultMargins="true">
+
+                        <!-- 1. C% -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:background="@drawable/edit_field_design"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/tvLabelCMgAdd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="C%:"
+                                android:textColor="#2E7D32"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvValueCMgAdd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3.8"
+                                android:textColor="#2E7D32"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- 2. Si% -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:background="@drawable/edit_field_design"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/tvLabelSiMgAdd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Si%:"
+                                android:textColor="#2E7D32"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvValueSiMgAdd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1.7"
+                                android:textColor="#2E7D32"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- 3. P% -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:background="@drawable/edit_field_design"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/tvLabelCEMgAdd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CE:"
+                                android:textColor="#2E7D32"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvValueCEMgAdd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0.113"
+                                android:textColor="#2E7D32"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- 4. S% -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:background="@drawable/edit_field_design"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/tvLabelSMgAdd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="S%:"
+                                android:textColor="#2E7D32"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvValueSMgAdd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0.026"
+                                android:textColor="#2E7D32"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                    </GridLayout>
+                    <TextView
+                        android:id="@+id/tvTrtNoCom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trt No:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvHeader"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTrtNoComValue"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_bg_converter"
+                        android:backgroundTint="@color/lightBlue1"
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvHeader"
+                        app:layout_constraintStart_toEndOf="@id/tvTrtNoCom" />
+
+                    <!-- TimeStamp -->
+                    <TextView
+                        android:id="@+id/tvTimeStampCom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TimeStamp:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTrtNoComValue"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTimeStampComValue"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_bg_converter"
+                        android:backgroundTint="@color/lightBlue1"
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvTrtNoComValue"
+                        app:layout_constraintStart_toEndOf="@id/tvTimeStampCom" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Accepted Button -->
+            <TextView
+                android:id="@+id/btnAccepted"
+                android:layout_width="220dp"
+                android:layout_height="35dp"
+                android:text="Accepted"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_field_design"
+                android:backgroundTint="#81C784"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/rightCardMgAdd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Right Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rightCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintStart_toEndOf="@id/leftCard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="MHF Composition"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:drawablePadding="8dp"
+                android:textColor="@color/info_dark"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Grid of Compositions -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:rowCount="2"
+                android:alignmentMode="alignMargins"
+                android:useDefaultMargins="true">
+
+                <!-- 1. C% -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="@color/compositionBg"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tvLabelC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C%:"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvValueC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3.8"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 2. Si% -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="@color/compositionBg"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tvLabelSi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Si%:"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvValueSi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1.7"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 3. P% -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="@color/compositionBg"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tvLabelMn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="P%:"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvValueMn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.113"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 4. S% -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="@color/compositionBg"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tvLabelS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S%:"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvValueS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.026"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 5. Mn% -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="@color/compositionBg"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tvLabelP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mn%:"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvValueP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.081"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 6. CE% -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="@color/compositionBg"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tvLabelTi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CE%:"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvValueTi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.00024"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </GridLayout>
+
+            <!-- Note -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/compositionBg"
+                android:padding="8dp"
+                android:text="Note: Composition values are auto-retrieved from the database"
+                android:textColor="#1565C0"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- under right Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/BelowRightCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintStart_toEndOf="@id/leftCard"
+        app:layout_constraintTop_toBottomOf="@id/rightCard"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/sdp_fReturnMetalLM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Return LM Weight into SDP-F"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- MHF Ladle Weight Out Value -->
+            <EditText
+                android:id="@+id/sdp_fReturnMetalLMValue"
+                android:layout_width="220dp"
+                android:layout_height="35dp"
+                android:background="@drawable/edit_field_design"
+                android:hint="Enter Value here..."
+                android:textSize="14sp"
+                android:padding="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sdp_fReturnMetalLM" />
+
+            <!-- MHF Ladle Weight Out Label -->
+            <TextView
+                android:id="@+id/mhfLadleWeightOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MHF Ladle Weight Out"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sdp_fReturnMetalLMValue" />
+
+            <!-- MHF Ladle Weight Out Value -->
+            <TextView
+                android:id="@+id/edtMhfLadleWeightOut"
+                android:layout_width="220dp"
+                android:layout_height="38dp"
+                android:background="@drawable/edit_field_design"
+                android:hint="450"
+                android:padding="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mhfLadleWeightOut" />
+
+            <TextView
+                android:id="@+id/btnAccept"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="Accept"
+                android:background="@drawable/button_field_design"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toEndOf="@id/edtMhfLadleWeightOut"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="110dp"
+                android:layout_marginStart="15dp" />
+
+            <!-- Return Label -->
+            <TextView
+                android:id="@+id/tvReturnLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Return Metal To MHF- Time:"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edtMhfLadleWeightOut" />
+
+            <!-- Return Button -->
+            <TextView
+                android:id="@+id/btnReturn"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:text="Return"
+                android:gravity="center"
+                android:background="@drawable/button_field_design"
+                android:backgroundTint="#FF8000"
+                android:textColor="@android:color/white"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/tvReturnLabel"
+                app:layout_constraintTop_toTopOf="@id/tvReturnLabel" />
+
+            <!-- Return Timestamp -->
+            <TextView
+                android:id="@+id/tvReturnTimestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--:--:--"
+                android:background="@drawable/bg_card"
+                android:padding="6dp"
+                android:textColor="#FF8000"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toEndOf="@id/btnReturn"
+                app:layout_constraintTop_toTopOf="@id/btnReturn" />
+            <TextView
+                android:id="@+id/btnBackToConverter"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="Back To Converter"
+                android:background="@drawable/button_field_design"
+                android:backgroundTint="@color/line"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvReturnLabel"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

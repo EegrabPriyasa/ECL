@@ -19,8 +19,6 @@
         app:layout_constraintEnd_toStartOf="@id/rightCard">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp">
@@ -53,7 +51,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Spinner
-                android:id="@+id/spinnerLadleSeq"
+                android:id="@+id/spinnerLadleSeqMBF"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
@@ -74,7 +72,7 @@
                 android:textStyle="bold"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="4dp"
-                app:layout_constraintTop_toBottomOf="@id/spinnerLadleSeq"
+                app:layout_constraintTop_toBottomOf="@id/spinnerLadleSeqMBF"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
@@ -140,31 +138,31 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- Accepted Button -->
-            <Button
-                android:id="@+id/btnAccepted"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Accepted"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="#81C784"
-                android:textColor="@android:color/white"
-                app:layout_constraintTop_toBottomOf="@id/etWeight"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+<!--            <Button-->
+<!--                android:id="@+id/btnAccepted"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Accepted"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:backgroundTint="#81C784"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/etWeight"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent" />-->
 
-            <!-- Success Note -->
-            <TextView
-                android:id="@+id/tvSuccessNote"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#E8F5E9"
-                android:text="MBF Tap accepted at 12:07:11 PM"
-                android:textColor="#388E3C"
-                android:padding="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/btnAccepted"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+<!--            &lt;!&ndash; Success Note &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/tvSuccessNote"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="#E8F5E9"-->
+<!--                android:text="MBF Tap accepted at 12:07:11 PM"-->
+<!--                android:textColor="#388E3C"-->
+<!--                android:padding="8dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/btnAccepted"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -487,12 +485,14 @@
                 android:layout_marginBottom="12dp" />
 
             <!-- Start Pouring Button -->
-            <Button
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:text="@string/start_pouring"
+                android:textSize="@dimen/text_large"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
+                android:background="@drawable/button_field_design"
                 android:backgroundTint="@color/success_dark"
                 android:drawablePadding="8dp"
                 android:layout_marginBottom="12dp"
@@ -500,12 +500,15 @@
                 />
 
             <!-- Stop Pouring Button -->
-            <Button
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="35dp"
                 android:layout_marginBottom="12dp"
+                android:background="@drawable/button_field_design"
                 android:backgroundTint="@color/error_color"
                 android:text="@string/stop_pouring"
+                android:textSize="@dimen/text_large"
+                android:gravity="center"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 

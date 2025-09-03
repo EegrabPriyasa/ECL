@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/leftPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card"
+        android:padding="12dp"
+        android:elevation="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rightPanel"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Title Row -->
+        <ImageView
+            android:id="@+id/iconTemp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/temparature"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Live Temperature Readings"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/iconTemp"
+            app:layout_constraintTop_toTopOf="@id/iconTemp"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Selected Temperature -->
+        <TextView
+            android:id="@+id/tvSelectedTemp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Temperature :1200°C "
+            android:background="@drawable/edit_field_design"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:textColor="#565252"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/iconTemp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Spinner: MHF Number Label -->
+        <TextView
+            android:id="@+id/tvMhfLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crucible No"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvSelectedTemp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerMhf"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_field_design"
+            android:spinnerMode="dropdown"
+            app:layout_constraintTop_toBottomOf="@id/tvMhfLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Temperature Type Label -->
+        <TextView
+            android:id="@+id/tvTempTypeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperature Type"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/spinnerMhf"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Radio Buttons -->
+        <RadioGroup
+            android:id="@+id/rgTempType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/tvTempTypeLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RadioButton
+                android:id="@+id/rbInitial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Initial" />
+
+            <RadioButton
+                android:id="@+id/rbFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Final"
+                android:layout_marginStart="16dp" />
+        </RadioGroup>
+
+
+        <!-- Submit Button -->
+        <TextView
+            android:id="@+id/btnTempSubmit"
+            android:layout_width="320dp"
+            android:layout_height="35dp"
+            android:text="Submit Temperature Data"
+            android:gravity="center"
+            android:background="@drawable/button_field_design"
+            android:backgroundTint="#666666"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintTop_toBottomOf="@id/rgTempType"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/btnCancel"
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:backgroundTint="@color/boxColor"
+            android:text="Cancel"
+            android:background="@drawable/button_field_design"
+            android:gravity="center"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/btnTempSubmit"
+            app:layout_constraintTop_toBottomOf="@+id/rgTempType"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    <!-- RIGHT PANEL -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rightPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card"
+        android:padding="12dp"
+        android:elevation="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/leftPanel"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/titleFurnace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Furnace Energy Meter Reading"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/gauge"
+            android:drawablePadding="8dp"
+            android:textSize="16sp"
+            android:textColor="@color/line"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Alert -->
+        <TextView
+            android:id="@+id/tvAlert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#EAF3FF"
+            android:padding="8dp"
+            android:text="Daily Alert\nReminder: Submit meter reading before 6:00 AM daily"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/titleFurnace"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- MHF Number -->
+        <TextView
+            android:id="@+id/tvMhfNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Crucible No"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvAlert"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Spinner
+            android:id="@+id/spMhfNumber"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_field_design"
+            app:layout_constraintTop_toBottomOf="@id/tvMhfNumber"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- MHF Meter Reading -->
+        <TextView
+            android:id="@+id/tvMhfReading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Crucible Meter Reading"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/spMhfNumber"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/etMhfReading"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:hint="Enter meter reading"
+            android:paddingStart="10dp"
+            android:textSize="14sp"
+            android:background="@drawable/edit_field_design"
+            app:layout_constraintTop_toBottomOf="@id/tvMhfReading"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Current Time -->
+        <TextView
+            android:id="@+id/tvCurrentTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Current Time: 5:56:48 PM"
+            android:textSize="14sp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/etMhfReading"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Submit Button -->
+        <TextView
+            android:id="@+id/btnSubmitReading"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:text="Submit Meter Reading"
+            android:backgroundTint="#666666"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="@drawable/button_field_design"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvCurrentTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btnSubmitReading"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/bg_card"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rightPanel"
+        app:layout_constraintTop_toBottomOf="@id/leftPanel">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Metal Requirement from MHF"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Time -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Time:"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:30"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Quantity -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Quantity:"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 units"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Temperature -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Temperature:"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="280°C"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:background="@android:color/darker_gray" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

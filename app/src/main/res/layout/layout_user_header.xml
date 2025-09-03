@@ -43,7 +43,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="PT"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/text_large_extra"
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:gravity="center" />
@@ -68,20 +68,19 @@
 
                         <TextView
                             android:id="@+id/username"
-                            android:layout_width="160dp"
+                            android:layout_width="210dp"
                             android:layout_height="wrap_content"
                             android:text="Priyasa Tapadar"
-                            android:textSize="20sp"
+                            android:textSize="@dimen/text_large_extra"
                             android:textStyle="bold"
                             android:textColor="@color/text_primary" />
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="28dp"
                             app:cardCornerRadius="12dp"
                             app:cardElevation="0dp"
-                            app:cardBackgroundColor="@android:color/transparent"
+                            android:background="@drawable/check_box_bg"
                             app:strokeColor="@color/success_color"
                             app:strokeWidth="1dp">
 
@@ -102,8 +101,8 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Authenticated"
-                                    android:textSize="12sp"
+                                    android:text="@string/authenticated"
+                                    android:textSize="@dimen/text_small"
                                     android:textColor="@color/success_color" />
 
                             </LinearLayout>
@@ -123,8 +122,8 @@
                             android:id="@+id/session_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Fri,22th Aug"
-                            android:textSize="14sp"
+                            android:text="@string/fri_22th_aug"
+                            android:textSize="@dimen/text_medium"
                             android:textColor="@color/info_dark"
                            />
                         <View
@@ -132,14 +131,15 @@
                             android:layout_height="19dp"
                             android:background="@color/blue"
                             android:layout_marginStart="10dp"
+                            android:layout_marginTop="6dp"
                             />
 
                         <TextView
                             android:id="@+id/session_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="11:15:00"
-                            android:textSize="14sp"
+                            android:text="@string/_11_15_00"
+                            android:textSize="@dimen/text_medium"
                             android:textColor="@color/info_dark"
                             android:layout_marginStart="5dp"
                             android:layout_marginEnd="24dp" />
@@ -147,34 +147,31 @@
 
 
                         <TextView
+                            android:id="@+id/tvShift"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Shift: A"
-                            android:textSize="14sp"
+                            android:text="@string/shift_a"
+                            android:textSize="@dimen/text_medium"
                             android:textColor="@color/text_secondary"
                             android:layout_marginEnd="24dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Plant: ECL Main"
-                            android:textSize="14sp"
-                            android:textColor="@color/text_secondary" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="MHF No:"
+                            android:text="@string/mhf_no"
+                            android:textSize="@dimen/text_medium"
                             android:textColor="@color/text_secondary"
-                            android:layout_marginStart="20dp"/>
+                            android:layout_marginStart="24dp"
+                            />
 
                         <Spinner
                             android:id="@+id/MhfSpinner"
                             android:layout_width="110dp"
                             android:layout_height="30dp"
-                            android:background="@drawable/button_bg"
+                            android:textSize="@dimen/text_medium"
+                            android:background="@drawable/edit_field_design"
                             android:layout_marginStart="10dp"
-                            android:layout_marginTop="3dp"
                             />
 
 
@@ -187,7 +184,7 @@
 
             <!-- Department and Logout -->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
@@ -197,21 +194,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="5dp"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Assigned Department"
-                        android:textSize="12sp"
+                        android:text="@string/assigned_department"
+                        android:textSize="@dimen/text_small"
                         android:textColor="@color/text_secondary"
                         android:layout_marginBottom="8dp"
                         />
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
-                        android:layout_height="56dp"
+                        android:layout_height="45dp"
                         app:cardCornerRadius="8dp"
                         app:cardBackgroundColor="@android:color/white"
                         app:cardElevation="2dp"
@@ -223,28 +220,28 @@
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
                             android:gravity="center_vertical"
-                            android:paddingHorizontal="16dp"
-                            android:minWidth="200dp">
+                            android:paddingHorizontal="10dp"
+                            android:minWidth="120dp">
 
                             <ImageView
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:layout_marginEnd="12dp"
+                                android:layout_marginEnd="10dp"
                                 android:src="@drawable/building"
                                  />
 
                             <View
                                 android:layout_width="12dp"
                                 android:layout_height="12dp"
-                                android:layout_marginEnd="12dp"
+                                android:layout_marginEnd="10dp"
                                 android:background="@drawable/circle_blue" />
 
                             <TextView
                                 android:id="@+id/tv_pageTitle"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Mini Heel"
-                                android:textSize="16sp"
+                                android:text="@string/mp_convereter"
+                                android:textSize="@dimen/text_medium"
                                 android:textStyle="bold"
                                 android:textColor="@color/text_primary" />
 
@@ -257,7 +254,7 @@
                 <!-- Logout Button -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="56dp"
+                    android:layout_height="40dp"
                     app:cardCornerRadius="8dp"
                     app:cardBackgroundColor="@android:color/white"
                     app:cardElevation="2dp"
@@ -265,6 +262,7 @@
                     app:strokeWidth="1dp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:layout_marginTop="14dp"
                     android:foreground="?android:attr/selectableItemBackground">
 
                     <LinearLayout
@@ -272,7 +270,7 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:paddingHorizontal="20dp">
+                        >
 
                         <ImageView
                             android:layout_width="20dp"
@@ -282,10 +280,10 @@
                             />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
-                            android:text="Logout"
-                            android:textSize="16sp"
+                            android:text="@string/logout"
+                            android:textSize="@dimen/text_medium"
                             android:textColor="@color/error_color" />
 
                     </LinearLayout>
@@ -328,8 +326,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Temperature Control"
-                    android:textSize="14sp"
+                    android:text="@string/temperature_control"
+                    android:textSize="@dimen/text_medium"
                     android:textColor="@color/text_secondary" />
             </LinearLayout>
 
@@ -350,8 +348,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Production Process"
-                    android:textSize="14sp"
+                    android:text="@string/production_process"
+                    android:textSize="@dimen/text_medium"
                     android:textColor="@color/text_secondary" />
             </LinearLayout>
 
@@ -372,8 +370,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MHF Operations"
-                    android:textSize="14sp"
+                    android:text="@string/mhf_operations"
+                    android:textSize="@dimen/text_medium"
                     android:textColor="@color/text_secondary" />
             </LinearLayout>
 
@@ -394,8 +392,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Data Recording"
-                    android:textSize="14sp"
+                    android:text="@string/data_recording"
+                    android:textSize="@dimen/text_medium"
                     android:textColor="@color/text_secondary" />
             </LinearLayout>
 
@@ -403,8 +401,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Last login: 12/31/2024 08:30 AM"
-                android:textSize="14sp"
+                android:text="@string/last_login_12_31_2024_08_30_am"
+                android:textSize="@dimen/text_medium"
                 android:textColor="@color/text_secondary" />
 
         </LinearLayout>

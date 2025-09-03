@@ -184,41 +184,41 @@
                 android:paddingStart="12dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_username" />
-            <TextView
-                android:id="@+id/title_department"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Department Selection"
-                android:textSize="16sp"
-                android:textColor="@color/line"
-                android:layout_marginTop="20dp"
-                app:layout_constraintStart_toStartOf="@+id/et_password"
-                app:layout_constraintTop_toBottomOf="@+id/et_password"/>
+<!--            <TextView-->
+<!--                android:id="@+id/title_department"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:text="Department Selection"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textColor="@color/line"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/et_password"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/et_password"/>-->
 
-            <!-- Label -->
-            <TextView
-                android:id="@+id/label_select_department"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Select Department:"
-                android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@id/title_department"
-                app:layout_constraintStart_toStartOf="@+id/title_department"
-                app:layout_constraintEnd_toEndOf="@+id/title_department" />
+<!--            &lt;!&ndash; Label &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/label_select_department"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:text="Select Department:"-->
+<!--                android:textSize="14sp"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/title_department"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/title_department"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/title_department" />-->
 
-            <!-- Dropdown -->
-            <Spinner
-                android:id="@+id/deptSpinner"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:background="@drawable/edit_field_design"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="170dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/title_department"
-                app:layout_constraintStart_toStartOf="@+id/label_select_department"/>
+<!--            &lt;!&ndash; Dropdown &ndash;&gt;-->
+<!--            <Spinner-->
+<!--                android:id="@+id/deptSpinner"-->
+<!--                android:layout_width="300dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:background="@drawable/edit_field_design"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginStart="170dp"-->
+<!--                android:layout_marginBottom="16dp"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/title_department"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/label_select_department"/>-->
 
 
             <!--            &lt;!&ndash; Remember Me & Forgot Password &ndash;&gt;-->

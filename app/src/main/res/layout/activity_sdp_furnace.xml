@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
-    tools:context=".MainActivity">
+    tools:context=".TabScreen.SDP_F.SDP_FurnaceActivity">
 
     <ScrollView
         android:layout_width="0dp"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-           >
+            >
 
             <!-- Company Header -->
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,8 +55,8 @@
                     android:id="@+id/titleText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/electrosteel_castings_limited"
-                    android:textSize="@dimen/text_large_extra"
+                    android:text="ELECTROSTEEL CASTINGS LIMITED"
+                    android:textSize="28sp"
                     android:textStyle="bold"
                     android:textColor="@color/text_primary"
                     app:layout_constraintTop_toBottomOf="@id/logoCard"
@@ -69,8 +69,8 @@
                     android:id="@+id/subtitleText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mini_heel_production_system"
-                    android:textSize="@dimen/text_large"
+                    android:text="SDP INDUCTION FURNACE"
+                    android:textSize="18sp"
                     android:textColor="@color/primary_blue"
                     app:layout_constraintTop_toBottomOf="@id/titleText"
                     app:layout_constraintStart_toStartOf="parent"
@@ -90,13 +90,10 @@
                 android:layout_marginEnd="10dp"
                 />
 
-            <!-- Step Progress Indicator -->
-<!--            -->
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/main_content_card1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="640dp"
                 android:layout_marginTop="24dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="8dp"
@@ -114,6 +111,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/gradient_header"
+                        android:backgroundTint="@color/header1"
                         android:padding="24dp"
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
@@ -123,121 +121,32 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/step_1_temperature_amp_mhf_configuration"
-                            android:textSize="@dimen/text_large"
+                            android:text="Crucible Wise Production"
+                            android:textSize="20sp"
                             android:textStyle="bold"
-                            android:textColor="@android:color/white" />
+                            android:textColor="@color/line" />
 
 
 
                     </LinearLayout>
 
                     <!-- Content Frame -->
-<!--                    <FrameLayout-->
-<!--                        android:id="@+id/content_frame"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:padding="24dp" />-->
-                    <include layout="@layout/mhf_temp_reading"
-                        android:id="@+id/mhfTempReading"/>
+                    <!--                    <FrameLayout-->
+                    <!--                        android:id="@+id/content_frame"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:padding="24dp" />-->
+                    <include layout="@layout/sdp_f_temp_reading"
+                        android:id="@+id/sdpfTempReading"/>
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/main_content_card2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="8dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                app:cardBackgroundColor="@android:color/white">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:orientation="vertical">
-
-                    <!-- Card Header -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/gradient_header"
-                        android:padding="24dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:id="@+id/step_title1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/production_process1"
-                            android:textSize="@dimen/text_large"
-                            android:textStyle="bold"
-                            android:textColor="@android:color/white" />
+            <include layout="@layout/sdp_f_lower_part"
+                android:id="@+id/sdpFLowerPart"/>
 
 
-
-                    </LinearLayout>
-
-
-                    <include android:id="@+id/productionProcess"
-                        layout="@layout/production_process"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-            <!-- others fragments Container -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/main_content_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="8dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                app:cardBackgroundColor="@android:color/white">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <!-- TabLayout -->
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tabLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:background="#F2F2F5"
-                        android:padding="4dp"
-                        app:tabGravity="fill"
-                        app:tabMode="fixed"
-                        app:tabBackground="@drawable/tab_background"
-                        app:tabTextAppearance="@style/CustomTabText"
-                        app:tabIndicatorHeight="0dp"
-                        android:layout_margin="8dp" >
-
-                    </com.google.android.material.tabs.TabLayout>
-
-
-
-
-
-                    <!-- Content Frame -->
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/viewPager"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:overScrollMode="never"
-                        android:padding="24dp" />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
 
 
 
@@ -250,5 +159,6 @@
         </LinearLayout>
 
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
